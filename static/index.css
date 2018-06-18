@@ -1,0 +1,572 @@
+
+
+body,html{
+
+  background-color: #f6f6f6;
+
+  font-family: 'Rosart-Regular';
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+  font-size: 18px;
+  line-height: 22px;
+
+
+}
+#write{
+  cursor: pointer;
+}
+#parse{
+  cursor:pointer;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 1px;
+
+}
+#upload{
+  cursor:pointer;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+a{
+  text-decoration: none;
+  color: #716995;
+  color: black;
+  cursor: pointer;
+}
+em{
+  text-decoration: none;
+  color: #716995;
+  color: black;
+  cursor: pointer;
+  font-style: normal;
+
+}
+em:hover{
+  color: #ffb35c;
+  color: #fda85a;
+
+}
+
+span{
+  color: #ffb35c;
+  color: black;
+
+  cursor: pointer;
+
+}
+a:hover{
+  text-decoration: none;
+  color: #716995;
+  color: #fda85a;
+}
+
+span:hover{
+  color: #ffb35c;
+  color: #fda85a;
+
+}
+
+
+.active {
+  color: #fda85a;
+}
+mark{
+  background-color: transparent;
+  color: white ;
+
+
+}
+mark.she123 {
+  /*  color: #51B151;
+  */
+}
+.she123{
+  color: black;
+  background-color: white;
+  margin: 1%;
+
+}
+mark.he123 {
+  /*  color: #716995;
+  */
+}
+.he123{
+  color: black;
+  background-color: white;
+  margin: 1%;
+}
+.box{
+
+  padding:1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  /*background: #ffb35c; */
+}
+a{
+
+  font-family: 'Rosart-Regular';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  letter-spacing: -1px;
+}
+.italic{
+  padding: 10px;
+  font-style: italic;
+}
+.italic > a{
+  /*background: linear-gradient(to top, #f9c266 0, rgba(154, 253, 163, 0) 50px);
+  */
+  color:#f9c266;
+  text-decoration: none;
+
+}
+.profwiki{
+  width:100%;
+  padding-top:1%;
+  padding-bottom:1%;
+  float: left;
+
+}
+.profwiki > img{
+  width:8%;
+  margin: 1%;
+  float: left;
+
+}
+.allprof{
+  min-height: 600px;
+  padding-bottom: 1%;
+}
+.testi{
+
+  font-family: 'Rosart-Regular';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  letter-spacing: -1px;
+  padding: 1%;
+  padding-right: 15%;
+}
+.testiitalico{
+
+  font-family: 'Rosart-Regular';
+  -webkit-font-smoothing: antialiased;
+  font-style: italic;
+  text-align: left;
+  font-weight: lighter;
+  padding: 0;
+  margin: 0;
+  letter-spacing: -1px;
+  padding-bottom: 1%;
+  padding-right: 15%;
+}
+p{
+  font-family: 'Rosart-Regular';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+h3{
+  font-family: 'Btp', monospace;
+  font-weight: 300;
+
+  font-style: normal;
+  color: black;
+  padding: 0;
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: -1px;
+
+}
+
+
+
+::selection {
+  background: #f5f4f5; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #f5f4f5; /* Gecko Browsers */
+}
+.container{
+  width: 100%;
+  display: flex;
+}
+.data-container{
+  width: 100%;
+}
+
+.col1{
+  float: left;
+  display: flex;
+
+  flex:3;
+  flex-wrap: wrap;
+
+  padding: 1%;
+  min-height: 600px;
+}
+
+#input > p {
+  font-size: 30px;
+  line-height: 36px;
+
+}
+.col2{
+  float: left;
+  display: flex;
+
+  flex:2;
+  padding: 1%;
+  min-height: 600px;
+  display: none;
+}
+.col3{
+
+  float: left;
+  display: flex;
+
+  flex:1;
+  padding: 1%;
+  min-height: 600px;
+  display: none;
+}
+.col4{
+
+  float: left;
+  display: flex;
+
+  flex:1;
+  padding: 1%;
+  min-height: 600px;
+  display: none;
+}
+.col5{
+
+  float: left;
+  display: flex;
+
+  flex:1;
+  padding: 1%;
+  min-height: 600px;
+  display: none;
+}
+
+.texteditor{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+}
+p{
+  padding: 15px;
+  margin-bottom: 100px;
+}
+
+#wrapper{
+  text-align: center;
+}
+#form{
+  display: inline-block;
+
+}
+.menucontainer > #menu-toggle{
+  float: right;
+  padding-right: 1%;
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 1px;
+
+}
+.menucontainer > #menu-data{
+  color: white;
+  float: right;
+  padding-right: 1%;
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 1px;
+
+}
+.menucontainer > p{
+  z-index: 400;
+
+  font-family: 'Btp', monospace;
+  font-weight: 300;
+
+  font-size: 32px;
+  float: left;
+  padding-left: 1%;
+}
+.menucontainer > p > a{
+  z-index: 400;
+  color: white;
+
+  font-family: 'Btp', monospace;
+  font-weight: 300;
+
+  font-size: 23px;
+  float: left;
+  padding-left: 1%;
+}
+
+.info_title > h1{
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.menupage{
+  top: 51px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: white;
+  z-index: 100;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 1%;
+
+}
+.menucontainer{
+  background-color: black;
+  color: white;
+  height: 50px;
+  border-bottom: solid 1px black;
+  float: left;
+  width: 100%;
+}
+.space{
+  background-color: #white;
+  float: left;
+  width: 100%;
+  display: flex;
+}
+
+.info{
+  font-family: 'Btp', monospace;
+  font-weight: 300;
+  display: fixed;
+  top:0;
+  left:0;
+}
+
+.info_title{
+  font-family: 'Btp', monospace;
+  text-align: center;
+  width: 91%;
+  float: left;
+  font-weight: 300;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+
+}
+#middle{
+  width: 50%;
+}
+
+.left{
+  flex: 0.5;
+  /*background: linear-gradient(to bottom, red 0, rgba(154, 202, 255, 0) 500px);
+  */
+  float: left;
+  padding: 1%;
+  padding-top: 3%;
+
+}
+.right{
+  display: flex;
+  flex:1;
+  float: left;
+  padding: 1%;
+  min-height: 600px;
+
+}
+.highlight{
+  flex: 1;
+  float: left;
+  padding: 1.5%;
+  height: 100%;
+}
+h2{
+  font-family: 'Btp', monospace;
+  color:white;
+  font-size: 18px;
+  font-weight: 300;
+  padding-left: 15px;
+  letter-spacing: 1px;
+}
+
+h3{
+  font-family: 'Btp', monospace;
+  font-weight: 300;
+
+  color: black;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+
+.values{
+  flex: 1;
+  float: left;
+  height: 98%;
+}
+.half{
+  width: 45%;
+  float: left;
+}
+.half1{
+  width: 45%;
+  float: left;
+  background-color: #f6f6f6;
+
+}
+.half > p{
+  background-color: white;
+
+}
+.title{
+  font-size: 40px;
+  font-weight: 100;
+
+}
+.text{
+  text-align:left;
+  font-size: 30px;
+  line-height: 36px;
+
+}
+#test2{
+  max-width: 100%;
+
+}
+#output{
+  color: white;
+}
+.none{
+  display: none;
+
+}
+form{
+  width: 100px;
+  float: left;
+}
+#input {
+  display: inline-block;
+  overflow: hidden;
+  width: 96%;
+  /* height: 600px; */
+  /* max-height: 600px; */
+  padding-bottom: 20px;
+  float: left;
+  background-color: white;
+}
+.content {
+
+  width: 50%;
+  float: left;
+
+}
+button{
+
+  background: none;
+  font-family: 'Btp', monospace;
+  font-weight: 300;
+  border: none;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 10px;
+}
+#fulltext{
+  padding: 1%;
+  margin: 1%;
+  width: 96%;
+  float: left;
+  font-size: 30px;
+  line-height: 36px;
+
+  background-color:white;
+}
+
+.json-database{
+  margin:1%;
+  padding: 1%;
+  width: 16%;
+  height:300px;
+  float: left;
+  background-color:white;
+  font-size: 22px;
+  line-height: 24px;
+}
+.
+.cluster-0 {
+  color: black;
+}
+.cluster-0:hover{
+  box-shadow: 0 10px 35px #444444;
+}
+.cluster-0 > a{
+  color: black;
+}
+
+.cluster-1 >a{
+ color: black;
+}
+.cluster-1:hover{
+  box-shadow: 0 10px 35px #444444;
+}
+
+.cluster-2  >a{
+  color: #716995;
+}
+.cluster-2:hover{
+  box-shadow: 0 10px 35px #444444;
+
+}
+
+.cluster-3 >a{
+  color: #ffb35c;
+}
+.cluster-3:hover{
+  box-shadow: 0 10px 35px #444444;
+}
+.cluster-4 >a{
+  color: #c5c5c5;
+}
+.cluster-4:hover{
+  box-shadow: 0 10px 35px #444444;
+}
+
+[contenteditable]{
+  /* box-shadow: inset 0 0px 15px #444444; */
+  background-color: #444444;
+  padding: 5px;
+
+}
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}

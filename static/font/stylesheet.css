@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Btp';
+    src: url('Btp-Rotated.woff2') format('woff2'),
+        url('Btp-Rotated.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Btp';
+    src: url('Btp-Light.woff2') format('woff2'),
+        url('Btp-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Btp';
+    src: url('Btp-Normal.woff2') format('woff2'),
+        url('Btp-Normal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

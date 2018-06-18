@@ -1,0 +1,1 @@
+The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already present in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns from these stereotypes.

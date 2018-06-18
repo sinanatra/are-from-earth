@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Are from Earth</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script type="text/javascript" src="static/index.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="static/index.css" />
+  <link rel="stylesheet" href="static/font/font.css" />
+
+
+  <script type="text/javascript">
+  function htmlToText(elem) {
+    var outText="";
+    for(var x=0; x<elem.childNodes.length; x++){
+      if(elem.childNodes[x].data){
+        outText+=elem.childNodes[x].data;
+      }else{
+        outText+="\n";
+      }
+    }
+    //alert(elem.childNodes.length + " Nodes: \r\n\r\n" + outText);
+    return(outText);
+  }
+</script>
+</head>
+
+<body>
+
+
+  <div class="menucontainer">
+    <p> <a href="{{ url_for('index') }}" >←</a></p>
+    <p  id="menu-toggle">info</p>
+  </div>
+</div>
+
+<div class="menupage">
+  <div class="none">
+    <p id="output" style="display="none""> </p>
+  </div>
+  <div class="info_title">
+    <h1 style="color:black;  text-align: left;">Text Embedding and Sexism </h1>
+    <p class="text">
+      The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already present in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns from these stereotypes.
+      <br>
+      Most of the work done by researchers and industries is focusing on the performance and optimization of learning algorithm, always from a learner’s perspective.
+      Terms like “Algorithmic Bias” are showing up more often on international press when software used to predict future criminals are biased against blacks, or Google Translate assign a sex to gender neutral sentences. Even more examples could be mentioned, from Extremist ads on Youtube to links between apps for gay men and sex offenders.
+      Machines just learn from what we show them.
+      The misconfusing definitions of Artificial Intelligence or Machine learning should be instead replaced by the term Machine Teaching, as it is in the teacher that lies the responsibility of deciding what to transmit, what task and what to study.
+      Placing the responsibility on the teacher helps us to realise how tricky this process is.
+      We shouldn’t just focus on fixing the mistakes in these machines, but we have to be more careful on deciding which examples giving them as inputs  and therefore on what we teach them.
+      <br>
+      Artificial Intelligence is now in every object, from phones to lights, from maps to lockers. Critiques on Artificial intelligence are often focused on speculation, mainly with a sci-fi dystopian point of view. Researchers are constantly  improving the performance of the employed  algorithms, testing their “intelligence” in many different contexts.
+      Examples often depicts Computers defeating the world champion of Go, which has clear paths to victory or defeat.
+      But intelligence is more than a sophisticated form of pattern recognition, intelligence is also social and tactile as researches in cognitive science suggests: bodily interactions are crucial to how we grasp more abstract mental concepts. A.I should be therefore studied, tested and embodied in different environments.
+    </p>
+  </div>
+</div>
+
+<div class="data-container">
+  {% for name, info in data.items() %}
+    <div class="json-database cluster-{{ info['cluster'] }}">
+      <a href="{{ url_for('content', name = name) }}">
+        {{ info['content'] | truncate(255) }}
+      </a>
+      <!-- <h2 id="write" style="color:black"> Something in here</h2> -->
+    </div>
+
+  {% endfor %}
+</div>
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#parse").click(function(){
+    if( $('.col2').css('display') == 'none')  {
+      $('.col2').css('display', 'block');
+    }
+  });
+
+  $("#shescore").click(function(){
+    if( $('.col3').css('display') == 'none')  {
+      $('.col3').css('display', 'block');
+    }
+  });
+  $("#hescore").click(function(){
+    if( $('.col3').css('display') == 'none')  {
+      $('.col3').css('display', 'block');
+    }
+  });
+  $("#associations").click(function(){
+    if( $('.col4').css('display') == 'none')  {
+      $('.col4').css('display', 'block');
+    }
+  });
+  $("#write").click(function(){
+    if( $('.col2').css('display') == 'block')  {
+      $('.col2').css('display', 'none');
+    }
+    else {
+      $('.col2').css('display', 'block');
+
+    }
+    if( $('.col3').css('display') == 'block')  {
+      $('.col3').css('display', 'none');
+    }
+    else {
+      $('.col3').css('display', 'block');
+
+    }
+    if( $('.col4').css('display') == 'block')  {
+      $('.col4').css('display', 'none');
+    }
+    else {
+      $('.col4').css('display', 'block');
+
+    }
+  });
+
+  $("#menu-toggle").click(function(){
+    if( $('.menupage').css('display') == 'none')  {
+      $('.menupage').css('display', 'block');
+      $('body').css('overflow', 'hidden');
+      $('.menupage').css('overflow', 'scroll');
+      $('.menupage').scrollTop(0);
+
+
+    }
+    else {
+      $('.menupage').css('display', 'none');
+
+      $('body').css('overflow', 'scroll');
+      $(window).scrollTop(0);
+
+    }
+
+
+  });
+});
+</script>
+
+<script>
+
+document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
+  e.preventDefault();
+  var text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertHTML", false, text);
+});
+
+</script>
+
+</body>
+</html>
