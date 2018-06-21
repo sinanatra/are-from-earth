@@ -21,3 +21,11 @@ Start
 Run `FLASK_APP=server.py flask run` to start.
 
 Run `FLASK_APP=server.py FLASK_DEBUG=1 flask run` to start in debugging mode.
+
+
+To Remember:
+-----
+
+Remember to insert a `.txt` or `.bin` embedding file in `gender.py`, you can create one here: `https://github.com/sinanatra/gender-bias-embedding/blob/master/create-word2vec.ipynb`or fetch it from here: `https://nlp.stanford.edu/projects/glove/` 
+
+And to download spacy modules from here: `https://spacy.io/usage/models`
