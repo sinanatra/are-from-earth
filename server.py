@@ -14,6 +14,14 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/info', methods=['GET'])
+def info():
+    """
+    Action to render home page.
+    """
+    return render_template('info.html')
+
+
 @app.route('/database', methods=['GET'])
 def database():
     """
@@ -33,9 +41,12 @@ def content(name):
     Action to render the database page.
     """
     files = load_files()
+    clusterized = load_model()
+
     try:
-        text = files[name]
-        return render_template('content.html', text = text, name = name )
+        lines = files[name].split("\n")
+        cluster = clusterized.get(name)
+        return render_template('content.html', lines = lines, name = name, cluster = cluster )
     except KeyError:
         abort(404)
 

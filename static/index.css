@@ -36,13 +36,13 @@ body,html{
 }
 a{
   text-decoration: none;
-  color: #716995;
+  color: #8336DD;
   color: black;
   cursor: pointer;
 }
 em{
   text-decoration: none;
-  color: #716995;
+  color: #8336DD;
   color: black;
   cursor: pointer;
   font-style: normal;
@@ -63,7 +63,7 @@ span{
 }
 a:hover{
   text-decoration: none;
-  color: #716995;
+  color: #8336DD;
   color: #fda85a;
 }
 
@@ -84,7 +84,7 @@ mark{
 
 }
 mark.she123 {
-  /*  color: #51B151;
+  /*  color: #5FC996;
   */
 }
 .she123{
@@ -94,7 +94,7 @@ mark.she123 {
 
 }
 mark.he123 {
-  /*  color: #716995;
+  /*  color: #8336DD;
   */
 }
 .he123{
@@ -269,10 +269,7 @@ h3{
   height: 100%;
   background-color: white;
   display: flex;
-}
-p{
-  padding: 15px;
-  margin-bottom: 100px;
+  padding: 10px;
 }
 
 #wrapper{
@@ -282,7 +279,7 @@ p{
   display: inline-block;
 
 }
-.menucontainer > #menu-toggle{
+.menucontainer > #info{
   float: right;
   padding-right: 1%;
   cursor: pointer;
@@ -306,10 +303,18 @@ p{
 
   font-family: 'Btp', monospace;
   font-weight: 300;
-
+  margin-top: 15px;
   font-size: 32px;
   float: left;
   padding-left: 1%;
+}
+.menucontainer > p:active{
+  text-decoration: none;
+  color: #8336DD;
+}
+.menucontainer > p > a:active{
+  text-decoration: none;
+  color: #8336DD;
 }
 .menucontainer > p > a{
   z-index: 400;
@@ -328,19 +333,17 @@ p{
   font-weight: 300;
 }
 
-.menupage{
-  top: 51px;
-  position: absolute;
+.content{
+
   width: 100%;
   height: 100%;
-  display: none;
   background-color: white;
   z-index: 100;
   font-size: 23px;
   font-weight: 300;
   letter-spacing: 1px;
   padding: 1%;
-
+color: black
 }
 .menucontainer{
   background-color: black;
@@ -367,7 +370,6 @@ p{
 
 .info_title{
   font-family: 'Btp', monospace;
-  text-align: center;
   width: 91%;
   float: left;
   font-weight: 300;
@@ -497,17 +499,36 @@ button{
   cursor: pointer;
   padding: 10px;
 }
-#fulltext{
+button:focus{
+  outline: 0px solid transparent;
+  color: #8336DD;
+}
+.fulltext{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+  margin: 1%;
+  width: 80%;
+  float: left;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: -1px;
+
+  background-color:white;
+}
+.infotext{
   padding: 1%;
   margin: 1%;
   width: 96%;
   float: left;
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: -1px;
 
   background-color:white;
 }
-
 .json-database{
   margin:1%;
   padding: 1%;
@@ -518,43 +539,105 @@ button{
   font-size: 22px;
   line-height: 24px;
 }
-.
-.cluster-0 {
-  color: black;
+
+
+.json-database.cluster-None{
+
+  background-color:black;
+  text-decoration: none;
 }
-.cluster-0:hover{
-  box-shadow: 0 10px 35px #444444;
+.cluster-None >a {
+  color:white;
+}
+.cluster-None:hover{
+  box-shadow: 0 10px 35px black;
+}
+.fulltext.cluster-None{
+  color: black;
+  box-shadow:none;
+
 }
 .cluster-0 > a{
-  color: black;
+  color: #4F89FD;
 }
+.cluster-0:hover{
+  box-shadow: 0 10px 35px #4F89FD;
+}
+.fulltext.cluster-0{
+  color: #4F89FD;
+  box-shadow:none;
 
+}
 .cluster-1 >a{
- color: black;
+ color: #5FC996;
 }
 .cluster-1:hover{
-  box-shadow: 0 10px 35px #444444;
+  box-shadow: 0 10px 35px #5FC996;
 }
+.fulltext.cluster-1{
+  color: #5FC996;
+  box-shadow:none;
 
+}
 .cluster-2  >a{
-  color: #716995;
+  color: #8336DD;
 }
 .cluster-2:hover{
-  box-shadow: 0 10px 35px #444444;
+  box-shadow: 0 10px 35px #8336DD;
 
 }
+.fulltext.cluster-2{
+  color: #8336DD;
+  box-shadow:none;
 
+}
 .cluster-3 >a{
   color: #ffb35c;
 }
 .cluster-3:hover{
-  box-shadow: 0 10px 35px #444444;
+  box-shadow: 0 10px 35px #ffb35c;
+}
+.fulltext.cluster-3{
+  color: #ffb35c;
+  box-shadow:none;
+
 }
 .cluster-4 >a{
-  color: #c5c5c5;
+  color: #CCCCCC;
 }
 .cluster-4:hover{
-  box-shadow: 0 10px 35px #444444;
+  box-shadow: 0 10px 35px #CCCCCC;
+}
+.fulltext.cluster-4{
+  color: #CCCCCC;
+  box-shadow:none;
+
+}
+.cluster-5 >a{
+  color: #E5D18E;
+}
+
+.cluster-5:hover{
+  box-shadow: 0 10px 35px #E5D18E;
+}
+.fulltext.cluster-5{
+  color: #E5D18E;
+  box-shadow:none;
+
+}
+.cluster-6 >a{
+  color: #EF6AA2;
+}
+.cluster-6:hover{
+  box-shadow: 0 10px 35px #EF6AA2;
+}
+.fulltext.cluster-6{
+  color: #EF6AA2;
+  box-shadow:none;
+
+}
+.cluster-7 >a {
+  color: blue;
 }
 
 [contenteditable]{

@@ -6,7 +6,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 import json
 import os
 from time import time
-from kmeans import save_model
+from kmeans import recluster
+
 # get a vector from a word
 def get_vector(word):
     try:
@@ -30,6 +31,7 @@ def load_files():
 
 def delete_file(file_name):
     os.unlink('./data/' + file_name)
+    recluster()
 
 # compare two words and get the similarity value
 def get_score(w1,w2):
@@ -40,7 +42,7 @@ def get_score(w1,w2):
 def upload_text(text):
     with open("./data/data_"+str(time())+".txt","w") as file:
         file.write(text)
-    save_model()
+    recluster()
 
 #you load the model here - depending on this, the results will be different
 # if the file is .bin check has to be True, if it's a .txt False
@@ -63,16 +65,18 @@ print (len(female_names),len(male_names))
 
 
 def compute_similar(word, heOrShe = 'she'):
-    mostSimilar = model.most_similar([word.lower(), heOrShe], topn = 20)
-    parole = [(word, float(get_score(get_vector(word.lower()), model[heOrShe]))) for word, _ in mostSimilar if get_score(get_vector(word.lower()), model[heOrShe]) > 0]
-    parole.sort(key=lambda a: a[1], reverse=True)
-    #percentages = [heOrShe for heOrShe, _ in mostSimilar if get_score(get_vector(word), model[heOrShe]) > .1]
-    print(parole)
-    return parole
+	try:
+		mostSimilar = model.most_similar([word], topn = 150)
+		#parole = [(word, float(get_score(get_vector(word.lower()), model[heOrShe]))) for word, _ in mostSimilar if get_score(get_vector(word.lower()), model[heOrShe]) > 0]
+		#parole.sort(key=lambda a: a[1], reverse=True)
+		print(mostSimilar)		
+		return mostSimilar
+
+	except Exception as e:
+		print(e)
+		
 
 def compute_bias(text):
-
-	# you load here names of men and women (english names for the moment)
 
 	import spacy
 	nlp = spacy.load('en')
@@ -83,14 +87,11 @@ def compute_bias(text):
 	final = [ [],[],[],[] ]
 
 	for sent in doc.sents:
-
 	    keep = []
-
 	    #for each word
 	    for token in sent:
 	        if token.is_alpha:
-	            # you have some info  - read documentation: https://spacy.io/usage/linguistic-features
-
+	            # to have some info  - read documentation: https://spacy.io/usage/linguistic-features
 	            if "NN" in token.tag_:
 	                keep.append([token.orth_, token.tag_, token.head.lemma_, token.dep_])
 	            if "PRP" in token.tag_:
@@ -102,13 +103,10 @@ def compute_bias(text):
 
 	    # you keep only the subjects - note: someone has to mention the verb "is" twice, otherwise it's hard to get the second name as a a subject
 	    subjects = [x for x in keep if "sub" in x[3]]
-
 	    names = [x[0] for x in subjects]
 
 	    for subj in subjects:
-
 	        # we first check if the name is a male
-
 	        check = False
 	        if subj[0].lower() in male_names:
 	            #print (subj, "is a man!")
@@ -128,7 +126,6 @@ def compute_bias(text):
 	            check = True
 
 	        # if the name is not in the list you compare it with the word embeddings of "he" and "she"
-
 	        # this not always work fine - it works for "federico" and "giulia", not for "giacomo" - funny, uh!
 
 	        if check == False:
@@ -234,8 +231,6 @@ def compute_bias(text):
 		        			final[2].append([prof,str(int(y) )])
 		        except:
 		        	continue
-
-
 
 	print("finalz",final)
 	return(final)
