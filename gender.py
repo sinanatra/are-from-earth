@@ -46,7 +46,7 @@ def upload_text(text):
 
 #you load the model here - depending on this, the results will be different
 # if the file is .bin check has to be True, if it's a .txt False
-file ="embeddings/reddit_300.txt"
+file ="embeddings/reddit.txt"
 check = False
 
 model = gensim.models.KeyedVectors.load_word2vec_format(file,
@@ -66,7 +66,7 @@ print (len(female_names),len(male_names))
 
 def compute_similar(word, heOrShe = 'she'):
 	try:
-		mostSimilar = model.most_similar([word], topn = 150)
+		mostSimilar = model.most_similar([word], topn = 50)
 		#parole = [(word, float(get_score(get_vector(word.lower()), model[heOrShe]))) for word, _ in mostSimilar if get_score(get_vector(word.lower()), model[heOrShe]) > 0]
 		#parole.sort(key=lambda a: a[1], reverse=True)
 		print(mostSimilar)		

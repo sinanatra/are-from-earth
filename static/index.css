@@ -1,9 +1,5 @@
-
-
 body,html{
-
   background-color: #f6f6f6;
-
   font-family: 'Rosart-Regular';
   -webkit-font-smoothing: antialiased;
   width: 100%;
@@ -18,15 +14,18 @@ body,html{
 
 
 }
-#write{
-  cursor: pointer;
-}
+
 #parse{
   cursor:pointer;
   font-size: 23px;
   font-weight: 300;
   letter-spacing: 1px;
-
+  max-height: 350px;
+  width: 300px;
+  border: 1px solid;
+  position:absolute;
+  top:250px;
+  left:20%;
 }
 #upload{
   cursor:pointer;
@@ -49,13 +48,14 @@ em{
 
 }
 em:hover{
-  color: #ffb35c;
-  color: #fda85a;
+  color: #5FC996;
+  /* #fda85a */
+  color: black;
 
 }
 
 span{
-  color: #ffb35c;
+  color: #5FC996;
   color: black;
 
   cursor: pointer;
@@ -64,18 +64,21 @@ span{
 a:hover{
   text-decoration: none;
   color: #8336DD;
-  color: #fda85a;
+  /* #fda85a */
+  color: black;
 }
 
 span:hover{
-  color: #ffb35c;
-  color: #fda85a;
+  color: #5FC996;
+  /* #fda85a */
+  color: black;
 
 }
 
-
 .active {
-  color: #fda85a;
+ 
+ /* #fda85a color: black; */
+
 }
 mark{
   background-color: transparent;
@@ -83,31 +86,35 @@ mark{
 
 
 }
-mark.she123 {
-  /*  color: #5FC996;
-  */
+mark#she123 {
+   color: #5FC996;
+  cursor: pointer;
 }
-.she123{
+#she123{
   color: black;
-  background-color: white;
-  margin: 1%;
+}
+.female{
+  color: #5FC996;
 
 }
-mark.he123 {
-  /*  color: #8336DD;
-  */
+.male{
+  color: #8336DD;
+
 }
-.he123{
+mark#he123 {
+   color: #8336DD;
+   cursor: pointer;
+
+}
+#he123{
   color: black;
-  background-color: white;
-  margin: 1%;
 }
 .box{
 
   padding:1%;
   margin-top: 1%;
   margin-bottom: 1%;
-  /*background: #ffb35c; */
+  /*background: #5FC996; */
 }
 a{
 
@@ -123,9 +130,9 @@ a{
   font-style: italic;
 }
 .italic > a{
-  /*background: linear-gradient(to top, #f9c266 0, rgba(154, 253, 163, 0) 50px);
+  /*background: linear-gradient(to top, #5FC996 0, rgba(154, 253, 163, 0) 50px);
   */
-  color:#f9c266;
+  color:#5FC996;
   text-decoration: none;
 
 }
@@ -192,7 +199,13 @@ h3{
 
 }
 
-
+.before{
+  display: block;
+}
+.after{
+  display: none;
+  min-width: 100%;
+}
 
 ::selection {
   background: #f5f4f5; /* WebKit/Blink Browsers */
@@ -207,7 +220,9 @@ h3{
 .data-container{
   width: 100%;
 }
-
+.secondpart{
+  display: none;
+}
 .col1{
   float: left;
   display: flex;
@@ -224,14 +239,31 @@ h3{
   line-height: 36px;
 
 }
+.centeralign{
+  position:relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+.datatext{
+  float: left;
+  display: flex;
+display: block;
+  flex:2;
+  padding: 1%;
+  width: 100%;
+}
+
+
+
 .col2{
   float: left;
   display: flex;
-
+display: block;
   flex:2;
   padding: 1%;
   min-height: 600px;
-  display: none;
 }
 .col3{
 
@@ -353,6 +385,13 @@ color: black
   float: left;
   width: 100%;
 }
+.menushadow{
+  background: linear-gradient(to bottom, black 0, rgba(154, 202, 255, 0) 500px);
+
+}
+.explain{
+  min-height: 100px;
+}
 .space{
   background-color: #white;
   float: left;
@@ -460,7 +499,10 @@ h3{
 
 }
 #output{
-  color: white;
+  font-size: 30px;
+  line-height: 36px;
+
+  user-select: text;
 }
 .none{
   display: none;
@@ -492,12 +534,13 @@ button{
   font-family: 'Btp', monospace;
   font-weight: 300;
   border: none;
-  color: white;
+  color: black;
   font-size: 24px;
   letter-spacing: 1px;
   font-weight: 300;
   cursor: pointer;
   padding: 10px;
+
 }
 button:focus{
   outline: 0px solid transparent;
@@ -592,13 +635,13 @@ button:focus{
 
 }
 .cluster-3 >a{
-  color: #ffb35c;
+  color: #5FC996;
 }
 .cluster-3:hover{
-  box-shadow: 0 10px 35px #ffb35c;
+  box-shadow: 0 10px 35px #5FC996;
 }
 .fulltext.cluster-3{
-  color: #ffb35c;
+  color: #5FC996;
   box-shadow:none;
 
 }

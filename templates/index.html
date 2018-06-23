@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8">
@@ -15,71 +16,74 @@
   <link rel="stylesheet" href="static/font/font.css" />
 
   <script type="text/javascript">
-  function htmlToText(elem) {
-    var outText="";
-    for(var x=0; x<elem.childNodes.length; x++){
-      if(elem.childNodes[x].data){
-        outText+=elem.childNodes[x].data;
-      }else{
-        outText+="\n";
+    function htmlToText(elem) {
+      var outText = "";
+      for (var x = 0; x < elem.childNodes.length; x++) {
+        if (elem.childNodes[x].data) {
+          outText += elem.childNodes[x].data;
+        } else {
+          outText += "\n";
+        }
       }
+      //alert(elem.childNodes.length + " Nodes: \r\n\r\n" + outText);
+      return (outText);
     }
-    //alert(elem.childNodes.length + " Nodes: \r\n\r\n" + outText);
-    return(outText);
-  }
-</script>
+  </script>
 </head>
 
 <body>
 
 
   <div class="menucontainer">
-    <p id="parse">check</p>
+    <p class="secondpart">
+      <a href="{{ url_for('index') }}">←</a>
+    </p>
+
     <p id="upload">upload</p>
 
-    <p  id="info"><a href="{{ url_for('info') }}">info</p>
-    <p  id="menu-data" > <a href="{{ url_for('database') }}"> database</a></p>
+    <p id="info">
+      <a href="{{ url_for('info') }}">info</p>
+    <p id="menu-data">
+      <a href="{{ url_for('database') }}"> database</a>
+    </p>
 
   </div>
-</div>
-<div class="none">
-  <p id="output" style="display="none""> </p>
-</div>
-<div class="container">
-  <div class="col1">
-
-    <h2 id="write" style="color:black"> Write:</h2>
-    <div class="texteditor" >
-      <div id="input" contenteditable="true" placeholder="Enter text here...">
-        <p>She didn't give you a lot of horse manure about what a great guy her father was.
-          She probably knew what a phony slob he was.</p>
+<div class="menushadow"></div>
+  <div class="container">
+    <div class="col1">
+      <div class="before">
+        <h2 class="explain" id="write" style="color:black"> Start writing something</h2>
+        <div class="texteditor">
+          <div id="input" contenteditable="true" placeholder="Enter text here...">
+            <p>She didn't give you a lot of horse manure about what a great guy her father was. She probably knew what a phony
+              slob he was.</p>
+          </div>
         </div>
       </div>
+      <div class="after">
+        <h2 class="explain" id="write" style="color:black"> Here you can see what gender connections this algorithm does. In green words closer to female, in purple to male. All of these are associations made by an algorithm used by Google</h2>
+        <div class="texteditor">
+
+          <p id="output"> </p>
+        </div>
+      </div>
+
     </div>
 
     <div class="col2">
-      <div class="half1">
-        <h2 style="color:black"> Female</h2>
-      </div>
-      <div class="half1">
-        <h2 style="color:black"> Male</h2>
-      </div>
-      <div class="texteditor">
-        <div class="half">
-          <p id="shescore" class="she123" >
-          </p>
+      <div class="texteditor" style="background: none;">
+        <div class="centeralign">
+          <button id="parse">Check the associations that Google does</button>
         </div>
-
-        <div class="half">
-          <p id="hescore" class="he123" >
-          </p>
-        </div>
+        <p id="shescore" class="she123" style="display: none"></p>
+        <p id="hescore" class="he123" style="display: none"></p>
 
       </div>
+
     </div>
 
     <div class="col3">
-      <h2 style="color:black"> 1° Associations</h2>
+      <h2 style="color:black"> Press a word from the previous column to check similar </h2>
       <div class="texteditor">
         <div>
           <p id="associations">
@@ -89,8 +93,8 @@
     </div>
 
     <div class="col4">
-      <h2 style="color:black"> 2° Associations</h2>
-      <div class="texteditor">
+        <h2 style="color:black"> Press a word from the previous column to check similar </h2>
+        <div class="texteditor">
         <div>
           <p id="second_associations">
           </p>
@@ -99,8 +103,8 @@
     </div>
 
     <div class="col5">
-      <h2 style="color:black"> 3° Associations</h2>
-      <div class="texteditor">
+        <h2 style="color:black"> Press a word from the previous column to check similar </h2>
+        <div class="texteditor">
         <div>
           <p id="third_associations">
           </p>
@@ -112,80 +116,74 @@
 
   <script>
 
-  $(document).ready(function(){
-    $("#parse").click(function(){
-      if( $('.col2').css('display') == 'none')  {
-        $('.col2').css('display', 'block');
-      }
+    $(document).ready(function () {
+      $("#parse").click(function () {
+        if ($('.before').css('display') == 'block') {
+          $('.before').css('display', 'none');
+        }
+        if ($('.after').css('display') == 'none') {
+          $('.after').css('display', 'block');
+        }
+        if ($('.col2').css('display') == 'block') {
+          $('.col2').css('display', 'none');
+        }
+        if ($('.col3').css('display') == 'none') {
+          $('.col3').css('display', 'block');
+        }
+        if ($('.col4').css('display') == 'none') {
+          $('.col4').css('display', 'block');
+        }
+        if ($('.col5').css('display') == 'none') {
+          $('.col5').css('display', 'block');
+        }
+        if ($('.secondpart').css('display') == 'none') {
+          $('.secondpart').css('display', 'block');
+        }
+
+      });
+
+ $(".secondpart").click(function () {
+        if ($('.before').css('display') == 'none') {
+          $('.before').css('display', 'block');
+        }
+        if ($('.after').css('display') == 'block') {
+          $('.after').css('display', 'none');
+        }
+        if ($('.col2').css('display') == 'none') {
+          $('.col2').css('display', 'block');
+        }
+        if ($('.col3').css('display') == 'block') {
+          $('.col3').css('display', 'none');
+        }
+        if ($('.col4').css('display') == 'block') {
+          $('.col4').css('display', 'none');
+        }
+        if ($('.col5').css('display') == 'block') {
+          $('.col5').css('display', 'none');
+        }
+        if ($('.secondpart').css('display') == 'block') {
+          $('.secondpart').css('display', 'none');
+        }
+        
+      });
+
+
     });
 
-    $("#shescore").click(function(){
-      if( $('.col3').css('display') == 'none')  {
-        $('.col3').css('display', 'block');
-      }
-    });
-    $("#hescore").click(function(){
-      if( $('.col3').css('display') == 'none')  {
-        $('.col3').css('display', 'block');
-      }
-    });
-    $("#associations").click(function(){
-      if( $('.col4').css('display') == 'none')  {
-        $('.col4').css('display', 'block');
-      }
-    });
-    $("#second_associations").click(function(){
-      if( $('.col5').css('display') == 'none')  {
-        $('.col5').css('display', 'block');
-      }
+  </script>
+
+
+
+  <script>
+
+    document.querySelector("div[contenteditable]").addEventListener("paste", function (e) {
+      e.preventDefault();
+      var text = e.clipboardData.getData("text/plain");
+      document.execCommand("insertText", false, text);
     });
 
-
-    $("#write").click(function(){
-      if( $('.col2').css('display') == 'block')  {
-        $('.col2').css('display', 'none');
-      }
-      else {
-        $('.col2').css('display', 'block');
-
-      }
-      if( $('.col3').css('display') == 'block')  {
-        $('.col3').css('display', 'none');
-      }
-      else {
-        $('.col3').css('display', 'block');
-
-      }
-      if( $('.col4').css('display') == 'block')  {
-        $('.col4').css('display', 'none');
-      }
-      else {
-        $('.col4').css('display', 'block');
-
-      }
-      if( $('.col5').css('display') == 'block')  {
-        $('.col5').css('display', 'none');
-      }
-      else {
-        $('.col5').css('display', 'block');
-
-      }
-    });
-
-  });
-</script>
-
-
-
-<script>
-
-document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
-  e.preventDefault();
-  var text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-});
-
-</script>
+  </script>
 
 </body>
+
 </html>

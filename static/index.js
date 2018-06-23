@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var lcWord = word.toLocaleLowerCase();
       for (var className in data) {
         if (data[className].indexOf(lcWord) !== -1) {
-          return '<mark class="' + className + '">' + word + '</mark>';
+          return '<mark id="' + className + '">' + word + '</mark>';
         }
       }
 
@@ -75,7 +75,6 @@ window.addEventListener('DOMContentLoaded', function () {
   var hescore = document.getElementById('hescore'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
   var parseBtn = document.getElementById('parse');
   var uploadBtn = document.getElementById('upload');
-
 
 
 
@@ -139,8 +138,12 @@ window.addEventListener('DOMContentLoaded', function () {
       })
       .join('<br>');
 
+      var female = document.getElementById('she123'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
+      var male = document.getElementById('he123'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
+    
+
       shescore.innerHTML = sheScores;
-      shescore.querySelectorAll('a')
+      output.querySelectorAll('#she123')
         .forEach(function (a) {
           a.addEventListener('click', function (event) {
             event.preventDefault();
@@ -151,7 +154,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 associations.innerHTML = res
                    .map(function (tuple) {
                     var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                    return '<span style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
+                    return '<span class="female" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
                   })
                   .join('<br>');
                 associations.querySelectorAll('span')
@@ -164,7 +167,7 @@ window.addEventListener('DOMContentLoaded', function () {
                           document.getElementById('second_associations').innerHTML = res
                             .map(function (tuple) {
                               var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                              return '<span style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">'+ tuple[0] + '</span>';
+                              return '<span class="female" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">'+ tuple[0] + '</span>';
                             })
                             .join('<br>');
                             second_associations.querySelectorAll('span')
@@ -177,7 +180,7 @@ window.addEventListener('DOMContentLoaded', function () {
                                       document.getElementById('third_associations').innerHTML = res
                                         .map(function (tuple) {
                                           var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                                          return '<span style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
+                                          return '<span class="female" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
                                         })
                                         .join('<br>');
                                     });
@@ -211,7 +214,7 @@ window.addEventListener('DOMContentLoaded', function () {
       .join('<br>');
 
       hescore.innerHTML = heScores;
-      hescore.querySelectorAll('a')
+      output.querySelectorAll('#he123')
         .forEach(function (a) {
           a.addEventListener('click', function (event) {
             event.preventDefault();
@@ -222,7 +225,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 associations.innerHTML = res
                   .map(function (tuple) {
                     var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                    return '<span style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
+                    return '<span class="male" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
                   })
                   .join('<br>');
                 associations.querySelectorAll('span')
@@ -236,7 +239,7 @@ window.addEventListener('DOMContentLoaded', function () {
                          second_associations.innerHTML = res
                             .map(function (tuple) {
                               var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                              return '<span style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
+                              return '<span class="male" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
                             })
                             .join('<br>');
                             second_associations.querySelectorAll('span')
@@ -249,7 +252,7 @@ window.addEventListener('DOMContentLoaded', function () {
                                       document.getElementById('third_associations').innerHTML = res
                                         .map(function (tuple) {
                                           var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                                          return '<span style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
+                                          return '<span class="male" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
                                         })
                                         .join('<br>');
                                     });
