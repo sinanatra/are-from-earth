@@ -36,11 +36,11 @@
 
   <div class="menucontainer">
     <p> <a href="{{ url_for('index') }}" >←</a></p>
-    <p  id="info"><a href="{{ url_for('info') }}">info</a></p>
+    <p  id="info"><a href="{{ url_for('info') }}">Why is this important?</a></p>
   </div>
 
   <div class="datatext">
-  <h2 style="color:black"> Here you can see how this algorithm is grouping all the text uploaded by users</h2>
+  <h2 > Divided in 5 groups by 5 colors, here you can see how this algorithm is grouping all the text uploaded by users. Everyone can decide what content to teach and to remove to this machine. </h2>
 </div>
 <div class="data-container">
   
@@ -49,7 +49,7 @@
       <a href="{{ url_for('content', name = name) }}">
         {{ info['content'] | truncate(255) }}
       </a>
-      <!-- <h2 id="write" style="color:black"> Something in here</h2> -->
+      <!-- <h2 id="write" > Something in here</h2> -->
     </div>
 
   {% endfor %}

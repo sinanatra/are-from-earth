@@ -38,22 +38,32 @@
     <p class="secondpart">
       <a href="{{ url_for('index') }}">←</a>
     </p>
+    <p id="intro">OPENSOURCE APPROACH TO ARTIFICIAL INTELLIGENCE</p>
 
-    <p id="upload">upload</p>
 
-    <p id="info">
-      <a href="{{ url_for('info') }}">info</p>
+    <p  id="info"><a href="{{ url_for('info') }}">Why is this important?</a></p>
+
     <p id="menu-data">
       <a href="{{ url_for('database') }}"> database</a>
     </p>
 
+
   </div>
-<div class="menushadow"></div>
-  <div class="container">
-    <div class="col1">
+  <div class="menushadow"></div>
+  <div class="introtext">
+    <p>The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already present
+      in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns from these
+      stereotypes.</p>
+    <p>On this website we visualise the connection that Word2Vec, an algorithm used by Google, does and we propose 
+      a new alternative by asking the user to upload their text to generate a newer Artificial Intelligence, in a more democratic way.</p>
+      <button id="begin" onClick="document.getElementById('container').scrollIntoView({behavior: 'smooth'});">Begin</button>
+
+  </div>
+  <div class="container" id="container">
+    <div class="col1" id="col1">
       <div class="before">
-        <h2 class="explain" id="write" style="color:black"> Start writing something</h2>
-        <div class="texteditor">
+        <h2 class="explain" id="write"> Start writing something:</h2>
+        <div class="texteditor" style="border: 1px solid white;">
           <div id="input" contenteditable="true" placeholder="Enter text here...">
             <p>She didn't give you a lot of horse manure about what a great guy her father was. She probably knew what a phony
               slob he was.</p>
@@ -61,19 +71,27 @@
         </div>
       </div>
       <div class="after">
-        <h2 class="explain" id="write" style="color:black"> Here you can see what gender connections this algorithm does. In green words closer to female, in purple to male. All of these are associations made by an algorithm used by Google</h2>
+        <h2 class="explain"> Here you can see what gender connections this algorithm does. In green words closer to female, in purple to male.
+          All of the following associations are embedded in our social networds, keyboards and translators. </h2>
+          <h2 class="explain" > Press on an highlighted word to see related.</h2>
         <div class="texteditor">
-
-          <p id="output"> </p>
+           
+          <p id="output"> 
+              <p id="throbber"><span>.</span><span>.</span><span>.</span></p>
+          </p>
         </div>
       </div>
 
     </div>
 
     <div class="col2">
-      <div class="texteditor" style="background: none;">
+      <h2 class="explain" id="write" > Press here to analyse your text</h2>
+
+      <div class="texteditor" style="background: none; padding-top: 0;">
         <div class="centeralign">
-          <button id="parse">Check the associations that Google does</button>
+          <button id="parse" onmousedown="loader()">Check</button>
+          <!-- <p id="upload"> upload</p> -->
+
         </div>
         <p id="shescore" class="she123" style="display: none"></p>
         <p id="hescore" class="he123" style="display: none"></p>
@@ -83,7 +101,7 @@
     </div>
 
     <div class="col3">
-      <h2 style="color:black"> Press a word from the previous column to check similar </h2>
+      <h2 class="explain"> Press on an highlighted word to see related. </h2>
       <div class="texteditor">
         <div>
           <p id="associations">
@@ -93,8 +111,8 @@
     </div>
 
     <div class="col4">
-        <h2 style="color:black"> Press a word from the previous column to check similar </h2>
-        <div class="texteditor">
+      <h2 class="explain"> Press on an highlighted word to see related. </h2>
+      <div class="texteditor">
         <div>
           <p id="second_associations">
           </p>
@@ -103,14 +121,27 @@
     </div>
 
     <div class="col5">
-        <h2 style="color:black"> Press a word from the previous column to check similar </h2>
-        <div class="texteditor">
+      <h2 class="explain"> Press on an highlighted word to see related. </h2>
+
+      <div class="texteditor">
         <div>
           <p id="third_associations">
           </p>
         </div>
       </div>
     </div>
+    <div class="col6">
+      <h2 class="explain">Send us your text </h2>
+
+      <p id="upload"> upload</p>
+
+      <h2 class="explain" style="display: inline-block"> Go check the database </h2>
+      <p id="menu-data">
+        <a href="{{ url_for('database') }}"> database</a>
+      </p>
+
+    </div>
+
 
   </div>
 
@@ -127,30 +158,34 @@
         if ($('.col2').css('display') == 'block') {
           $('.col2').css('display', 'none');
         }
-        if ($('.col3').css('display') == 'none') {
-          $('.col3').css('display', 'block');
+        if ($('.col3').css('display') == 'block') {
+          $('.col3').css('display', 'none');
         }
-        if ($('.col4').css('display') == 'none') {
-          $('.col4').css('display', 'block');
-        }
-        if ($('.col5').css('display') == 'none') {
-          $('.col5').css('display', 'block');
+        
+        if ($('.col6').css('display') == 'none') {
+          $('.col6').css('display', 'block');
         }
         if ($('.secondpart').css('display') == 'none') {
           $('.secondpart').css('display', 'block');
         }
-
+        if ($('.introtext').css('display') == 'block') {
+          $('.introtext').css('display', 'none');
+        }
+        if ($('.intro').css('display') == 'block') {
+          $('.intro').css('display', 'none');
+        }
+       
       });
 
- $(".secondpart").click(function () {
+      $(".secondpart").click(function () {
         if ($('.before').css('display') == 'none') {
           $('.before').css('display', 'block');
         }
         if ($('.after').css('display') == 'block') {
           $('.after').css('display', 'none');
         }
-        if ($('.col2').css('display') == 'none') {
-          $('.col2').css('display', 'block');
+        if ($('.col2').css('display') == 'block') {
+          $('.col2').css('display', 'none');
         }
         if ($('.col3').css('display') == 'block') {
           $('.col3').css('display', 'none');
@@ -161,18 +196,54 @@
         if ($('.col5').css('display') == 'block') {
           $('.col5').css('display', 'none');
         }
+        if ($('.col6').css('display') == 'block') {
+          $('.col6').css('display', 'none');
+        }
         if ($('.secondpart').css('display') == 'block') {
           $('.secondpart').css('display', 'none');
         }
-        
+
+        if ($('.introtext').css('display') == 'none') {
+          $('.introtext').css('display', 'block');
+        }
+
+        if ($('.intro').css('display') == 'none') {
+          $('.intro').css('display', 'block');
+        }
       });
-
-
-    });
+      $("#output").click(function () {
+        if ($('.col3').css('display') == 'none') {
+          $('.col3').css('display', 'block');
+        }
+      });
+      $(".col3").click(function () {
+        if ($('.col4').css('display') == 'none') {
+          $('.col4').css('display', 'block');
+        }
+      });
+      $(".col4").click(function () {
+        if ($('.col5').css('display') == 'none') {
+          $('.col5').css('display', 'block');
+        }
+      });  
+      
+      
+      });
 
   </script>
 
-
+<script>
+    var myVar;
+    
+    function loader() {
+        myVar = setTimeout(showPage, 8000);
+    }
+    
+    function showPage() {
+      document.getElementById("throbber").style.display = "none";
+      document.getElementById("output").style.display = "block";
+    }
+    </script>
 
   <script>
 
