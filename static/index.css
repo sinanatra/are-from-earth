@@ -73,7 +73,6 @@ font-size: 34px;
   max-height: 350px;
   width: 300px;
   border: 1px solid;
-  position:absolute;
 }
 #parse{
   display: block;
@@ -475,7 +474,7 @@ text-align: center;
   
 
 }
-p#menu-data:active{
+#menu-data > a:active{
   color: #8336DD;
 }
 .menucontainer > p{
@@ -548,7 +547,7 @@ color: white
 }
 
 .space{
-  background-color: #white;
+  background-color: white;
   float: left;
   width: 100%;
   display: flex;
@@ -709,6 +708,7 @@ form  > button{
   font-weight: 300;
   max-width: 60%;
   margin: 1%;
+  margin-left: 0;
 }
 button{
 
