@@ -338,7 +338,7 @@ display: block;
   padding: 1%;
   width: 100%;
   color: white;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
   padding-top: 100px;
 }
 .datatext > h2{
@@ -359,9 +359,8 @@ display: block;
   float: left;
   display: flex;
 
-  flex:1;
+  flex:0.7;
   padding: 1%;
-  min-height: 600px;
   display: none;
 
   height: 100%;
@@ -660,7 +659,7 @@ h3{
   user-select: text;
 }
 #output > p{
-  color: white;
+  color: #444;
   -webkit-font-smoothing: antialiased;
 }
 .none{
@@ -756,8 +755,8 @@ color: white;
 .json-database{
   margin:1%;
   padding: 1%;
-  width: 15%;
-  height:300px;
+  width: 10%;
+  height:600px;
   float: left;
 border: 1px solid white;
   line-height: 24px;
