@@ -28,7 +28,7 @@ body,html{
   font-family: 'Btp', monospace;
   font-weight: 300;
   display: inline-block; 
-font-size: 34px;
+  font-size: 34px;
 }
 
 @-webkit-keyframes bounce {
@@ -53,7 +53,8 @@ font-size: 34px;
     -webkit-transform: none;
             transform: none; } }
   #throbber span {
-    display: inline-block; }
+    display: inline-block;
+    }
   #throbber span:nth-child(1) {
     -webkit-animation: bounce 1s linear infinite;
             animation: bounce 1s linear infinite; }
@@ -105,17 +106,16 @@ font-size: 34px;
 }
 #upload{
   font-family: 'Btp', monospace;
-    font-weight: 300;
+  font-weight: 300;
   cursor: pointer;
   font-size: 23px;
-    font-weight: 300;
-    letter-spacing: -1px;
-    color: white;
-    margin-bottom: 20px;
-  margin-top: 20px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: white;
+  margin-bottom: 20px;
+  /* margin-top: 20px; */
   width: 300px;
   text-align: center;
-
 }
 p#upload:active{
   color: #8336DD;
@@ -309,12 +309,11 @@ h3{
 .col1{
   float: left;
   display: flex;
-
-  flex:3;
+  flex: 3;
   flex-wrap: wrap;
-
   padding: 1%;
   min-height: 600px;
+}
 }
 
 #input > p {
@@ -356,18 +355,17 @@ display: block;
 }
 .col3{
   margin-left: 10px;
-  float: left;
-  display: flex;
-
-  flex:0.7;
+  margin-top: 10px;
+  float: right;
+  /* display: none; */
+  flex: 0.7;
   padding: 1%;
   display: none;
-
   height: 100%;
   border-bottom: 1px solid white;
   border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-top: 1px solid white
+  border-right: 1px solid white;
+  border-top: 1px solid white;
 }
 .col4{
   float: left;
@@ -444,6 +442,10 @@ text-align: center;
   background-color: black;
   display: flex;
   padding: 5px;
+
+  font-size: 30px;
+  line-height: 36px;
+  
 }
 
 #wrapper{
@@ -541,7 +543,7 @@ color: white
 
 }
 .explain{
-  min-height: 50px;
+  /* min-height: 50px; */
   width: 100%;
 }
 
@@ -603,6 +605,8 @@ h2{
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 1px;
+  margin-top:  0;
+  padding-top:  0;
 }
 
 h3{
@@ -656,7 +660,6 @@ h3{
   font-size: 30px;
   line-height: 36px;
 
-  user-select: text;
 }
 #output > p{
   color: #444;
@@ -697,10 +700,10 @@ form  > button{
     line-height: 26px;
     letter-spacing: -1px;
     color: white;
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
     display: block;
     margin-top: 200px;
-        padding-bottom: 500px;
+    padding-bottom: 500px;
 }
 .introtext > p{
   font-family: 'Btp', monospace;
@@ -755,13 +758,13 @@ color: white;
 .json-database{
   margin:1%;
   padding: 1%;
-  width: 10%;
-  height:600px;
+  width: 8%;
+  height:400px;
   float: left;
 border: 1px solid white;
 
-  font-size: 0.8em;
-    line-height: 1.2em;
+  /* font-size: 0.8em;
+    line-height: 1.2em; */
 }
 
 
