@@ -66,7 +66,7 @@ print (len(female_names),len(male_names))
 
 def compute_similar(word, heOrShe = 'she'):
 	try:
-		mostSimilar = model.most_similar([word], topn = 20)
+		mostSimilar = model.most_similar([word, heOrShe ], topn = 20)
 		#parole = [(word, float(get_score(get_vector(word.lower()), model[heOrShe]))) for word, _ in mostSimilar if get_score(get_vector(word.lower()), model[heOrShe]) > 0]
 		#parole.sort(key=lambda a: a[1], reverse=True)
 		print(mostSimilar)		

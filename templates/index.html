@@ -36,9 +36,9 @@
 
   <div class="menucontainer">
     <p class="secondpart" onClick="document.getElementById('container').scrollIntoView({behavior: 'smooth'});">
-      <a >←</a>
+      <a>←</a>
     </p>
-    <p id="intro">opensource approach on artificial intelligence</p>
+    <p id="intro"> <a href="{{ url_for('index') }}">opensource approach on artificial intelligence</a></p>
 
 
     <p id="info">
@@ -59,8 +59,8 @@
     </p>
     <p>On this website we visualise the connection that Word2Vec, an algorithm used by Google, does and we propose a new alternative
       by asking the user to upload their text to generate a newer Artificial Intelligence, in a more democratic way.</p>
-    <button id="begin" onClick="document.getElementById('container').scrollIntoView({behavior: 'smooth'});">Begin</button>
-
+    <button id="begin" >Begin</button> 
+<!-- onClick="document.getElementById('container').scrollIntoView({behavior: 'smooth'});" -->
   </div>
   <div class="container" id="container">
     <div class="col1" id="col1">
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="after">
-        <h2 class="explain"> Here you can see what gender connections this algorithm does. In green words closer to female, in purple to male.
+        <h2 class="explain"> Here you can see what gender connections this algorithm does. In orange words closer to female, in purple to male.
           All of the following associations are embedded in our social networds, keyboards and translators. </h2>
         <h2 class="explain"> Press on an highlighted word to see related.</h2>
         <div class="texteditor">
@@ -155,6 +155,16 @@
   <script>
 
     $(document).ready(function () {
+
+      $("#begin").click(function () {
+        if ($('.introtext').css('display') == 'block') {
+          $('.introtext').css('display', 'none');
+        }
+        if ($('.container').css('display') == 'none') {
+          $('.container').css('display', 'flex');
+        }
+      });
+
       $("#parse").click(function () {
         if ($('.before').css('display') == 'block') {
           $('.before').css('display', 'none');
@@ -178,10 +188,10 @@
         if ($('.introtext').css('display') == 'block') {
           $('.introtext').css('display', 'none');
         }
-        if ($('.intro').css('display') == 'block') {
-          $('.intro').css('display', 'none');
+        if ($('#intro').css('display') == 'block') {
+          $('#intro').css('display', 'none');
         }
-       
+
       });
 
       $(".secondpart").click(function () {
@@ -207,9 +217,10 @@
         if ($('.secondpart').css('display') == 'block') {
           $('.secondpart').css('display', 'none');
         }
-
-
-ß
+        if ($('#intro').css('display') == 'block') {
+          $('#intro').css('display', 'none');
+        }
+        
       });
       $("#output").click(function () {
         if ($('.col3').css('display') == 'none') {
@@ -231,7 +242,7 @@
     }
 
     function showPage() {
-  
+
       document.getElementById("throbber").style.display = "none";
       document.getElementById("output").style.display = "block";
     }

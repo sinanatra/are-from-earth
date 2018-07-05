@@ -148,7 +148,7 @@ window.addEventListener('DOMContentLoaded', function () {
           a.addEventListener('click', function (event) {
             event.preventDefault();
             var word = a.innerText;
-            getSimilarWordsFromApi(word)
+            getSimilarWordsFromApi(word, "she")
             .then(function (res) {
               var associations= document.getElementById('associations');
                 associations.innerHTML = res
@@ -162,7 +162,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     a.addEventListener('click', function (event) {
                       event.preventDefault();
                       var word = a.innerText;
-                      getSimilarWordsFromApi(word)
+                      getSimilarWordsFromApi(word, "she")
                       .then(function (res) {
                           document.getElementById('second_associations').innerHTML = res
                             .map(function (tuple) {
@@ -175,7 +175,7 @@ window.addEventListener('DOMContentLoaded', function () {
                                 a.addEventListener('click', function (event) {
                                   event.preventDefault();
                                   var word = a.innerText;
-                                  getSimilarWordsFromApi(word)
+                                  getSimilarWordsFromApi(word, "she")
                                   .then(function (res) {
                                       document.getElementById('third_associations').innerHTML = res
                                         .map(function (tuple) {
@@ -219,8 +219,8 @@ window.addEventListener('DOMContentLoaded', function () {
           a.addEventListener('click', function (event) {
             event.preventDefault();
             var word = a.innerText;
-            getSimilarWordsFromApi(word)
-              .then(function (res) {
+            getSimilarWordsFromApi(word, "he")
+            .then(function (res) {
                 var associations= document.getElementById('associations');
                 associations.innerHTML = res
                   .map(function (tuple) {
@@ -233,7 +233,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     a.addEventListener('click', function (event) {
                       event.preventDefault();
                       var word = a.innerText;
-                      getSimilarWordsFromApi(word)
+                      getSimilarWordsFromApi(word, "he")
                       .then(function (res) {
                         var second_associations = document.getElementById('second_associations');
                          second_associations.innerHTML = res
@@ -247,7 +247,7 @@ window.addEventListener('DOMContentLoaded', function () {
                                 a.addEventListener('click', function (event) {
                                   event.preventDefault();
                                   var word = a.innerText;
-                                  getSimilarWordsFromApi(word)
+                                  getSimilarWordsFromApi(word, "he")
                                   .then(function (res) {
                                       document.getElementById('third_associations').innerHTML = res
                                         .map(function (tuple) {

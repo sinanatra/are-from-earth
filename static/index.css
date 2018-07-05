@@ -118,30 +118,30 @@ body,html{
   text-align: center;
 }
 p#upload:active{
-  color: #8336DD;
+  color: #a26177;
 }
 a{
   text-decoration: none;
-  color: #8336DD;
+  color: #a26177;
   color: black;
   cursor: pointer;
 }
 em{
   text-decoration: none;
-  color: #8336DD;
+  color: #a26177;
   color: white;
   cursor: pointer;
   font-style: normal;
 
 }
 em:hover{
-  color: #5FC996;
+  color: #ffb35c;
   color: white ;
 
 }
 
 span{
-  color: #5FC996;
+  color: #ffb35c;
   color: white;
 
   cursor: pointer;
@@ -149,12 +149,12 @@ span{
 }
 a:hover{
   text-decoration: none;
-  color: #8336DD;
+  color: #a26177;
   color: white;
 }
 
 span:hover{
-  color: #5FC996;
+  color: #ffb35c;
   color: white ;
 }
 
@@ -166,22 +166,22 @@ mark{
 
 }
 mark#she123 {
-   color: #5FC996;
+   color: #ffb35c;
   cursor: pointer;
 }
 #she123{
   color: black;
 }
 .female{
-  color: #5FC996;
+  color: #ffb35c;
 
 }
 .male{
-  color: #8336DD;
+  color: #a26177;
 
 }
 mark#he123 {
-   color: #8336DD;
+   color: #a26177;
    cursor: pointer;
 
 }
@@ -281,6 +281,7 @@ h3{
 
 .before{
   display: block;
+  width: 100%;;
 }
 .after{
   display: none;
@@ -298,6 +299,7 @@ h3{
   display: flex;
   margin-bottom: 300px;
   padding-top: 100px;
+  display: none;
 }
 .data-container{
   width: 100%;
@@ -348,8 +350,8 @@ display: block;
 .col2{
   float: left;
   display: flex;
-display: block;
-  flex:2;
+  display: block;
+  flex: 1;
   padding: 1%;
   min-height: 600px;
 }
@@ -476,7 +478,7 @@ text-align: center;
 
 }
 #menu-data > a:active{
-  color: #8336DD;
+  color: #a26177;
 }
 .menucontainer > p{
   z-index: 400;
@@ -494,11 +496,11 @@ text-align: center;
 }
 .menucontainer > p:active{
   text-decoration: none;
-  color: #8336DD;
+  color: #a26177;
 }
 .menucontainer > p > a:active{
   text-decoration: none;
-  color: #8336DD;
+  color: #a26177;
 }
 .menucontainer > p > a{
   
@@ -728,7 +730,7 @@ button{
 }
 button:focus{
   outline: 0px solid transparent;
-  color: #8336DD;
+  color: #a26177;
 }
 .fulltext{
   padding-left: 10%;
@@ -758,8 +760,8 @@ color: white;
 .json-database{
   margin:1%;
   padding: 1%;
-  width: 20%;
-  height:400px;
+  width: 15%;
+  height:500px;
   float: left;
 border: 1px solid white;
 
@@ -784,6 +786,7 @@ border: 1px solid white;
   color: white;
   box-shadow:none;
 
+
 }
 .cluster-0 > a{
   color: #4F89FD;
@@ -794,6 +797,7 @@ border: 1px solid white;
 .fulltext.cluster-0{
   color: #4F89FD;
   box-shadow:none;
+
 
 }
 .cluster-1 >a{
@@ -806,17 +810,19 @@ border: 1px solid white;
   color: #5FC996;
   box-shadow:none;
 
+
 }
 .cluster-2  >a{
-  color: #8336DD;
+  color: #a26177;
 }
 .cluster-2:hover{
-  box-shadow: 0 10px 35px #8336DD;
+  box-shadow: 0 10px 35px #a26177;
 
 }
 .fulltext.cluster-2{
-  color: #8336DD;
+  color: #a26177;
   box-shadow:none;
+
 
 }
 .cluster-3 >a{
@@ -829,6 +835,7 @@ border: 1px solid white;
   color: #5FC996;
   box-shadow:none;
 
+
 }
 .cluster-4 >a{
   color: #CCCCCC;
@@ -839,6 +846,7 @@ border: 1px solid white;
 .fulltext.cluster-4{
   color: #CCCCCC;
   box-shadow:none;
+
 
 }
 .cluster-5 >a{
@@ -852,6 +860,7 @@ border: 1px solid white;
   color: #E5D18E;
   box-shadow:none;
 
+
 }
 .cluster-6 >a{
   color: #EF6AA2;
@@ -862,6 +871,7 @@ border: 1px solid white;
 .fulltext.cluster-6{
   color: #EF6AA2;
   box-shadow:none;
+
 
 }
 .cluster-7 >a {
