@@ -35,7 +35,7 @@
 <body>
 
 
-  <div class="menucontainer">
+  <div class="menucontainer" style="border-bottom: solid 1px black;">
 
     <a class="index" id="elem1" href="{{ url_for('index') }}">A</a>
     <a class="index" id="elem2" href="{{ url_for('start') }}"> B </a>
@@ -44,35 +44,40 @@
     <a class="index" id="elem5" href="{{ url_for('info') }}"> E </a>
     <a class="index" id="elem7" href="{{ url_for('loop') }}">♁ </a>
   </div>
-  <div class="introtext">
-    <h2>Learning from your texts </h2>
-    <div class="datatext">
+  <div class="introtext" style="color: black;">
+    <h2 style="color: black;">Learning from your texts </h2>
+    <div class="datatext" style="color: black;">
       <p> Divided in 7 groups, here you can see how this algorithm is grouping all the text uploaded by users.
         <br>The clusters are fluid and made by the algorithm itself. They change each time content is uploaded or deleted. 
         <br>These contents are used to create an alternative to the dataset showed previously by Google, leaving the ownership to users: 
-        <br>everyone can decide what content to teach and to remove to this machine. </p>
+        everyone can decide what content to teach and to remove to this machine. </p>
+      </div>
     </div>
-  </div>
-  <div class="data-container">
+    <div class="data-container" style="color: black;">
 
-    {% for name, info in data.items() %}
-    <div class="json-database cluster-{{ info['cluster'] }}">
-      <a href="{{ url_for('content', name = name) }}">
-        {{ info['content'] | truncate(255) }}
-      </a>
+      {% for name, info in data.items() %}
+      <div class="json-database cluster-{{ info['cluster'] }}">
+        <a href="{{ url_for('content', name = name) }}">
+          {{ info['content'] | truncate(255) }}
+        </a>
+      </div>
+
+      {% endfor %}
     </div>
 
-    {% endfor %}
-  </div>
 
 
+    <script>
+      $('.index').css('background-color', '#f6f6f6');
 
-  <script>
-    $('#elem1').css('color', 'white');
-    $('#elem1').css('background-color', 'black');
-    $('#elem4').css('color', 'black');
-    $('#elem4').css('background-color', 'white');
-  </script>
-</body>
+      $('#elem1, #elem2,#elem5,#elem6,#elem7').css('color', 'black');
+      $('#elem1').css('background-color', '#f6f6f6');
+      $('#elem4').css('color', '#f6f6f6');
+      $('#elem4').css('background-color', 'black');
+      $('body').css('background-color', '#f6f6f6');
+      $('html').css('background-color', '#f6f6f6');
 
-</html>
+    </script>
+  </body>
+
+  </html>

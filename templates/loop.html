@@ -31,10 +31,10 @@
     </script>
 </head>
 
-<bod>
+<body>
 
 
-    <div class="menucontainer">
+  <div class="menucontainer" style="border-bottom: solid 1px black;">
         <a class="index" id="elem1" href="{{ url_for('index') }}">A</a>
         <a class="index" id="elem2" href="{{ url_for('start') }}"> B </a>
         <p class="index" id="elem3"> C </p>
@@ -58,11 +58,23 @@
     </div>
 
     <script>
-        $('#elem1').css('color', 'white');
-        $('#elem1').css('background-color', 'black');
-        $('#elem7').css('color', 'black');
-        $('#elem7').css('background-color', 'white');
+        $('.index').css('background-color', '#f6f6f6');
+
+        $('#elem1, #elem2,#elem4,#elem5,#elem6,#elem7').css('color', 'black');
+        $('#elem1').css('background-color', '#f6f6f6');
+        $('#elem7').css('color', '#f6f6f6');
+        $('#elem7').css('background-color', 'black');
+        $('body').css('background-color', '#f6f6f6');
+        $('html').css('background-color', '#f6f6f6');
+
+        $('body').css('background-color', '#f6f6f6');
+        $('html').css('background-color', '#f6f6f6');
+        $('.menuaction').css('background-color', '#f6f6f6');
+        $('.menucontainer').css('background-color', '#f6f6f6');
+        $('#elem4').css('background-color', '#f6f6f6');
+        $('#elem4').css('color', 'black');
+        $('button').css('color', 'black');
     </script>
-    </body>
+</body>
 
 </html>

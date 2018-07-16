@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ba>
 
 <head>
 
@@ -37,14 +37,14 @@
 
 
 
-  <div class="menucontainer">
+  <div class="menucontainer" style="border-bottom: solid 1px black;">
 
- 
-    <a class="index" id="elem4" href="{{ url_for('database') }}">←</a>
-   
+
+    <a class="index" id="elem4" href="{{ url_for('database') }}" >←</a>
+
   </div>
 
-  <div class="menuaction">
+  <div class="menuaction" style="border-bottom: solid 1px black; ">
 
     <div id="wrapper">
       <div id="form">
@@ -65,11 +65,18 @@
     </div>
   </div>
 
-<script>
+  <script>
    $('#elem1').css('color', 'white');
-    $('#elem1').css('background-color', 'black');
+   $('#elem1').css('background-color', 'black');
+   $('body').css('background-color', '#f6f6f6');
+   $('html').css('background-color', '#f6f6f6');
+   $('.menuaction').css('background-color', '#f6f6f6');
+   $('.menucontainer').css('background-color', '#f6f6f6');
+   $('#elem4').css('background-color', '#f6f6f6');
+   $('#elem4').css('color', 'black');
+
    
-</script>
+ </script>
 
 
 </body>

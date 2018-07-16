@@ -34,7 +34,7 @@
 <bod>
 
 
-  <div class="menucontainer">
+  <div class="menucontainer" style="border-bottom: solid 1px black;">
     <a class="index" id="elem1" href="{{ url_for('index') }}">A</a>
     <a class="index" id="elem2" href="{{ url_for('start') }}"> B </a>
     <p class="index" id="elem3"> C </p>
@@ -45,8 +45,8 @@
   <div class="data-container">
     <div class="infotext">
 
-      <h2>Text Embedding and Sexism </h2>
-      <p>
+      <h2 style="color: black">Text Embedding and Sexism </h2>
+      <p style="color: black">
         The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already present
         in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns from these
         stereotypes. Most of the work done by researchers and industries is focusing on the performance and optimization
@@ -69,11 +69,17 @@
     </div>
   </div>
   <script>
-    $('#elem1').css('color', 'white');
-    $('#elem1').css('background-color', 'black');
-    $('#elem5').css('color', 'black');
-    $('#elem5').css('background-color', 'white');
+    $('.index').css('background-color', '#f6f6f6');
+
+      $('#elem1, #elem2,#elem4,#elem6,#elem7').css('color', 'black');
+      $('#elem1').css('background-color', '#f6f6f6');
+      $('#elem5').css('color', '#f6f6f6');
+      $('#elem5').css('background-color', 'black');
+      $('body').css('background-color', '#f6f6f6');
+      $('html').css('background-color', '#f6f6f6');
+
+
   </script>
-  </body>
+</body>
 
 </html>
