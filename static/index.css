@@ -16,13 +16,13 @@ body,html{
   letter-spacing: normal;
 }
 @media (min-width: 60rem){
-.tab #throbber {
+  .tab #throbber {
     position: absolute;
     top: .2em;
     left: .35em;
     font-size: 1.3em;
     display: block;
-}
+  }
 }
 
 #throbber {
@@ -35,194 +35,194 @@ body,html{
 @-webkit-keyframes bounce {
   0% {
     -webkit-transform: none;
+    transform: none; }
+    25% {
+      -webkit-transform: translateY(-0.33em);
+      transform: translateY(-0.33em); }
+      50% {
+        -webkit-transform: none;
+        transform: none; } }
+
+        @keyframes bounce {
+          0% {
+            -webkit-transform: none;
             transform: none; }
-  25% {
-    -webkit-transform: translateY(-0.33em);
-            transform: translateY(-0.33em); }
-  50% {
-    -webkit-transform: none;
-            transform: none; } }
+            25% {
+              -webkit-transform: translateY(-0.33em);
+              transform: translateY(-0.33em); }
+              50% {
+                -webkit-transform: none;
+                transform: none; } }
+                #throbber span {
+                  display: inline-block;
+                }
+                #throbber span:nth-child(1) {
+                  -webkit-animation: bounce 1s linear infinite;
+                  animation: bounce 1s linear infinite; }
+                  #throbber span:nth-child(2) {
+                    -webkit-animation: bounce 1s .25s linear infinite;
+                    animation: bounce 1s .25s linear infinite; }
+                    #throbber span:nth-child(3) {
+                      -webkit-animation: bounce 1s .5s linear infinite;
+                      animation: bounce 1s .5s linear infinite; }
 
-@keyframes bounce {
-  0% {
-    -webkit-transform: none;
-            transform: none; }
-  25% {
-    -webkit-transform: translateY(-0.33em);
-            transform: translateY(-0.33em); }
-  50% {
-    -webkit-transform: none;
-            transform: none; } }
-  #throbber span {
-    display: inline-block;
-    }
-  #throbber span:nth-child(1) {
-    -webkit-animation: bounce 1s linear infinite;
-            animation: bounce 1s linear infinite; }
-  #throbber span:nth-child(2) {
-    -webkit-animation: bounce 1s .25s linear infinite;
-            animation: bounce 1s .25s linear infinite; }
-  #throbber span:nth-child(3) {
-    -webkit-animation: bounce 1s .5s linear infinite;
-            animation: bounce 1s .5s linear infinite; }
+                      #begin{
+                        margin-top: 50px;
+                        cursor:pointer;
+                        font-size: 1.1em;
+                        font-weight: 300;
+                        max-height: 350px;
+                        width: 300px;
+                        border: 1px solid;
+                      }
+                      #begin:active{
+                        background-color: white;
+                        color: black;
+                      }
+                      #parse{
+                        display: block;
+                        cursor:pointer;
+                        font-size: .8em;
+                        font-weight: 300;
+                        max-height: 350px;
+                        width: 300px;
+                        border: 1px solid white;
+                        background: black;
+                        color: white;
+                        padding: 10px;
+                        padding-left: 40px;
+                        padding-right: 40px;  
+                      }
+                      #parse:active{
+                        background-color: white;
+                        color: black;
+                      }
+                      #intro{
+                        cursor:pointer;
+                        font-size: 1.1em;
+                        font-weight: 300;
+                        display: block;
 
-#begin{
-  margin-top: 50px;
-  cursor:pointer;
-  font-size: 1.1em;
-  font-weight: 300;
-  max-height: 350px;
-  width: 300px;
-  border: 1px solid;
-}
-#begin:active{
-  background-color: white;
-  color: black;
-}
-#parse{
-  display: block;
-  cursor:pointer;
-  font-size: .8em;
-  font-weight: 300;
-  max-height: 350px;
-  width: 300px;
-  border: 1px solid white;
-  background: black;
-  color: white;
-  padding: 10px;
-  padding-left: 40px;
-  padding-right: 40px;  
-}
-#parse:active{
-  background-color: white;
-  color: black;
-}
-#intro{
-  cursor:pointer;
-  font-size: 1.1em;
-  font-weight: 300;
-  display: block;
-  
-}
-.centeralign > #upload{
-  
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-#upload{
-  font-family: 'Btp', monospace;
-    font-weight: 300;
-    cursor: pointer;
-    font-weight: 300;
-;
-letter-spacing:normal;
-    color: white;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    text-align: center;
-    z-index: 400;
-    color: white;
-    font-family: 'Btp', monospace;
-    font-weight: 300;
-    font-size: 1.1em;
-    display: none;
-}
-
-#upload:active{
-  color:black;
-  background-color: white;s
-}
-a{
-  text-decoration: none;
-  color: #a26177;
-  color: black;
-  cursor: pointer;
-}
-em{
-  text-decoration: none;
-  color: #a26177;
-  color: white;
-  cursor: pointer;
-  font-style: normal;
-
-}
-em:hover{
-  color: #ffb35c;
-  color: white ;
-
-}
-
-span{
-  color: #ffb35c;
-  color: white;
-
-  cursor: pointer;
-
-}
-a:hover{
-  text-decoration: none;
-  color: #a26177;
-  color: white;
-}
-
-span:hover{
-  color: #ffb35c;
-  color: white ;
-}
+                      }
+                      .centeralign > #upload{
 
 
-mark{
-  background-color: transparent;
-  color: white ;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                      }
+                      #upload{
+                        font-family: 'Btp', monospace;
+                        font-weight: 300;
+                        cursor: pointer;
+                        font-weight: 300;
+                        ;
+                        letter-spacing:normal;
+                        color: white;
+                        padding-bottom: 20px;
+                        padding-top: 20px;
+                        text-align: center;
+                        z-index: 400;
+                        color: white;
+                        font-family: 'Btp', monospace;
+                        font-weight: 300;
+                        font-size: 1.1em;
+                        display: none;
+                      }
+
+                      #upload:active{
+                        color:black;
+                        background-color: white;s
+                      }
+                      a{
+                        text-decoration: none;
+                        color: #a26177;
+                        color: black;
+                        cursor: pointer;
+                      }
+                      em{
+                        text-decoration: none;
+                        color: #a26177;
+                        color: white;
+                        cursor: pointer;
+                        font-style: normal;
+
+                      }
+                      em:hover{
+                        color: #ffb35c;
+                        color: white ;
+
+                      }
+
+                      span{
+                        color: #ffb35c;
+                        color: white;
+
+                        cursor: pointer;
+
+                      }
+                      a:hover{
+                        text-decoration: none;
+                        color: #a26177;
+                        color: white;
+                      }
+
+                      span:hover{
+                        color: #ffb35c;
+                        color: white ;
+                      }
 
 
-}
-mark#she123 {
-   color: #ffb35c;
-  cursor: pointer;
-}
-#she123{
-  color: black;
-}
-.female{
-  color: #ffb35c;
+                      mark{
+                        background-color: transparent;
+                        color: white ;
 
-}
-.male{
-  color: #a26177;
 
-}
-mark#he123 {
-   color: #a26177;
-   cursor: pointer;
+                      }
+                      mark#she123 {
+                       color: #ffb35c;
+                       cursor: pointer;
+                     }
+                     #she123{
+                      color: black;
+                    }
+                    .female{
+                      color: #ffb35c;
 
-}
-#he123{
-  color: black;
+                    }
+                    .male{
+                      color: #a26177;
 
-}
-.box{
+                    }
+                    mark#he123 {
+                     color: #a26177;
+                     cursor: pointer;
 
-  padding:1%;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  /*background: #5FC996; */
-}
-a{
+                   }
+                   #he123{
+                    color: black;
 
-  font-family: 'Rosart-Regular';
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  padding: 0;
-  margin: 0;
-}
-.italic{
-  padding: 10px;
-  font-style: italic;
-}
-.italic > a{
+                  }
+                  .box{
+
+                    padding:1%;
+                    margin-top: 1%;
+                    margin-bottom: 1%;
+                    /*background: #5FC996; */
+                  }
+                  a{
+
+                    font-family: 'Rosart-Regular';
+                    -webkit-font-smoothing: antialiased;
+                    font-style: normal;
+                    padding: 0;
+                    margin: 0;
+                  }
+                  .italic{
+                    padding: 10px;
+                    font-style: italic;
+                  }
+                  .italic > a{
   /*background: linear-gradient(to top, #5FC996 0, rgba(154, 253, 163, 0) 50px);
   */
   color:#5FC996;
@@ -308,7 +308,7 @@ h3{
   display: flex;
   padding-top: 50px; 
   display: none;
-   overflow: hidden;
+  overflow: hidden;
 }
 .data-container{
   width: 100%;
@@ -320,8 +320,7 @@ h3{
 .col1{
   float: left;
   display: flex;
-  /* flex: 3; */
-  width: 80%;
+  flex: 3;
   flex-wrap: wrap;
   padding: 1%;
   min-height: 600px;
@@ -350,11 +349,10 @@ h3{
   color: white;
   padding-bottom: 50px;
   font-size: 1em;
-  padding-left: 1%;
- 
+
 }
 .datatext > p{
-  width: 80%;
+  width: 70%;
   font-family: 'Btp', monospace;
   font-weight: 300;
 }
@@ -383,36 +381,38 @@ h3{
   border-top: 1px solid white;
 }
 .col4{
-  float: left;
-  display: flex;
-
-  flex:1;
+  margin-left: 10px;
+  margin-top: 10px;
+  float: right;
+  /* display: none; */
+  flex: 0.7;
   padding: 1%;
-  min-height: 600px;
   display: none;
   height: 100%;
   border-bottom: 1px solid white;
+  border-left: 1px solid white;
   border-right: 1px solid white;
-  border-top: 1px solid white
+  border-top: 1px solid white;
 
 }
 .col5{
-  
-  float: left;
-  display: flex;
 
-  flex:1;
+  margin-left: 10px;
+  margin-top: 10px;
+  float: right;
+  /* display: none; */
+  flex: 0.7;
   padding: 1%;
-  min-height: 600px;
   display: none;
   height: 100%;
   border-bottom: 1px solid white;
+  border-left: 1px solid white;
   border-right: 1px solid white;
-  border-top: 1px solid white
+  border-top: 1px solid white;
 
 }
 .col6{
-  
+
 
   flex:1;
   padding: 1%;
@@ -448,7 +448,7 @@ h3{
   margin-bottom: 20px;
   margin-top: 20px;
   width: 300px;
-text-align: center;
+  text-align: center;
 }
 .texteditor{
   width: 100%;
@@ -526,7 +526,7 @@ text-align: center;
   cursor: pointer;
 }
 #elem3{
-color: #888;
+  color: #888;
 }
 ontainer > a{
   font-family: 'Btp', monospace;
@@ -564,7 +564,7 @@ ontainer > a{
   font-size: 1.3em;
   font-weight: 300;
   padding: 1%;
-color: white
+  color: white
 }
 
 .menushadow{
@@ -636,7 +636,7 @@ h2{
   font-family: 'Btp', monospace;
   color:white;
   font-size: 1.1em;
-    line-height: 1.2em;
+  line-height: 1.2em;
   font-weight: normal;
   margin-top:  0;
   padding-top:  0;
@@ -726,17 +726,17 @@ form  > a.button, form > button{
 
 }
 .introtext{
-    padding: 1%;
-    float: left;
-    font-size: 1.1em;
-    line-height: 1.2em;
-;
-letter-spacing:normal;
-    color: white;
-    /* border-bottom: 1px solid white; */
-    display: block;
-    margin-top: 50px;
-  }
+  padding: 1%;
+  float: left;
+  font-size: 1.1em;
+  line-height: 1.2em;
+  letter-spacing:normal;
+  color: white;
+  /* border-bottom: 1px solid white; */
+  display: block;
+  margin-top: 50px;
+  width: 100%;
+}
 .introtext > p{
   font-family: 'Btp', monospace;
   font-weight: 300;
@@ -744,6 +744,7 @@ letter-spacing:normal;
   margin: 1%;
   margin-left: 0;
 }
+
 a.button, button{
 
   background: none;
@@ -791,6 +792,8 @@ a.button:focus, button:focus{
 }
 
 .logo{
+  font-family: 'Btp', monospace;
+  font-weight: normal;
   display: block;
   color: white;
   font-size: 10em;
@@ -810,7 +813,7 @@ a.button:focus, button:focus{
   margin-top: 50px;
 }
 .introtext > p:last-of-type{
-margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 .json-database{
   margin:1%;
@@ -861,52 +864,52 @@ a::before{
   content: "☼ ";
   content: "2 ";
   display: block;}
-.cluster-2 > a::before{
-  content: "☁ ";
-  content: "3 ";
-  display: block;}
-.cluster-3 > a::before{
-  content: "⋆ ";
-  content: "4 ";
+  .cluster-2 > a::before{
+    content: "☁ ";
+    content: "3 ";
+    display: block;}
+    .cluster-3 > a::before{
+      content: "⋆ ";
+      content: "4 ";
 
-  display: block;
-}
-.cluster-4 > a::before{
-  content: "⌖ ";
-  content: "5 ";
+      display: block;
+    }
+    .cluster-4 > a::before{
+      content: "⌖ ";
+      content: "5 ";
 
-  display: block;
-}
-.cluster-5 > a::before{
-  content: "◊ ";
-  content: "6 ";
+      display: block;
+    }
+    .cluster-5 > a::before{
+      content: "◊ ";
+      content: "6 ";
 
-  display: block;
-}
-.cluster-6 > a::before{
-  content: "◊ ";
-  content: "7 ";
+      display: block;
+    }
+    .cluster-6 > a::before{
+      content: "◊ ";
+      content: "7 ";
 
-  display: block;
-}
-.cluster-0:hover{
- box-shadow: 0 10px 35px white
-}
-.fulltext.cluster-0{
-  color: #4F89FD;
-  color: white;
-  box-shadow:none;
+      display: block;
+    }
+    .cluster-0:hover{
+     box-shadow: 0 10px 35px white
+   }
+   .fulltext.cluster-0{
+    color: #4F89FD;
+    color: white;
+    box-shadow:none;
 
 
-}
-.cluster-1 >a{
- color: #5FC996;
- color: white;
-}
-.cluster-1:hover{
- box-shadow: 0 10px 35px white
-}
-.fulltext.cluster-1{
+  }
+  .cluster-1 >a{
+   color: #5FC996;
+   color: white;
+ }
+ .cluster-1:hover{
+   box-shadow: 0 10px 35px white
+ }
+ .fulltext.cluster-1{
   color: #5FC996;
   color: white;
   box-shadow:none;
