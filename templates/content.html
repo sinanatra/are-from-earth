@@ -35,10 +35,17 @@
 <body>
 
 
+
+
   <div class="menucontainer">
-    <p>
-      <a href="{{ url_for('database') }}">←</a>
-    </p>
+
+ 
+    <a class="index" id="elem4" href="{{ url_for('database') }}">←</a>
+   
+  </div>
+
+  <div class="menuaction">
+
     <div id="wrapper">
       <div id="form">
         <form action="{{ url_for('delete') }}" method="POST">
@@ -48,8 +55,6 @@
       </div>
     </div>
   </div>
-  </div>
-
 
 
   <div class="data-container">
@@ -60,7 +65,11 @@
     </div>
   </div>
 
-
+<script>
+   $('#elem1').css('color', 'white');
+    $('#elem1').css('background-color', 'black');
+   
+</script>
 
 
 </body>

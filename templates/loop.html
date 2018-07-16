@@ -14,9 +14,24 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="static/index.css" />
     <link rel="stylesheet" href="static/font/font.css" />
+
+    <script type="text/javascript">
+        function htmlToText(elem) {
+            var outText = "";
+            for (var x = 0; x < elem.childNodes.length; x++) {
+                if (elem.childNodes[x].data) {
+                    outText += elem.childNodes[x].data;
+                } else {
+                    outText += "\n";
+                }
+            }
+            //alert(elem.childNodes.length + " Nodes: \r\n\r\n" + outText);
+            return (outText);
+        }
+    </script>
 </head>
 
-<body>
+<bod>
 
 
     <div class="menucontainer">
@@ -27,23 +42,27 @@
         <a class="index" id="elem5" href="{{ url_for('info') }}"> E </a>
         <a class="index" id="elem7" href="{{ url_for('loop') }}">♁ </a>
     </div>
-
-    <div class="introtext">
-        <h2>Learning from Google </h2>
-
-        <p>The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already
-            present in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns
-            from these stereotypes.
+    <div class="data-container">
+        <div class="credits">
+            <h2>Made by Giacomo Nanni </h2>
+        </div>
+        <p class="logo">
+            ♁
         </p>
-        <p>On this website we visualise the connection that Word2Vec, an algorithm used by Google, does and we propose a new
-            alternative by asking the user to upload their text to generate a newer Artificial Intelligence, in a more democratic
-            way.</p>
-        <a id="begin" class="button" href="{{ url_for('start') }}">Begin</a>
-
-
+        <div class="credits">
+            <h2>Btp, designed by Émilie Rigaud </h2>
+        </div>
+        <div class="credits">
+            <h2>Rosart, designed by Katharina Köhler</h2>
+        </div>
     </div>
 
-
-</body>
+    <script>
+        $('#elem1').css('color', 'white');
+        $('#elem1').css('background-color', 'black');
+        $('#elem7').css('color', 'black');
+        $('#elem7').css('background-color', 'white');
+    </script>
+    </body>
 
 </html>

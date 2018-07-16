@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8">
@@ -16,48 +17,61 @@
 
 
   <script type="text/javascript">
-  function htmlToText(elem) {
-    var outText="";
-    for(var x=0; x<elem.childNodes.length; x++){
-      if(elem.childNodes[x].data){
-        outText+=elem.childNodes[x].data;
-      }else{
-        outText+="\n";
+    function htmlToText(elem) {
+      var outText = "";
+      for (var x = 0; x < elem.childNodes.length; x++) {
+        if (elem.childNodes[x].data) {
+          outText += elem.childNodes[x].data;
+        } else {
+          outText += "\n";
+        }
       }
+      //alert(elem.childNodes.length + " Nodes: \r\n\r\n" + outText);
+      return (outText);
     }
-    //alert(elem.childNodes.length + " Nodes: \r\n\r\n" + outText);
-    return(outText);
-  }
-</script>
+  </script>
 </head>
 
 <body>
 
 
   <div class="menucontainer">
-    <p> <a href="{{ url_for('index') }}" >←</a></p>
-    <p  id="info"><a href="{{ url_for('info') }}">why is this important?</a></p>
-  </div>
 
-  <div class="datatext">
-  <h2 > Divided in 5 groups by 5 colors, here you can see how this algorithm is grouping all the text uploaded by users. <br>Everyone can decide what content to teach and to remove to this machine. <br>
-  The colors are assigned by the algorithm itself and change each time content is uploaded or deleted. </h2>
-</div>
-<div class="data-container">
-  
-  {% for name, info in data.items() %}
+    <a class="index" id="elem1" href="{{ url_for('index') }}">A</a>
+    <a class="index" id="elem2" href="{{ url_for('start') }}"> B </a>
+    <p class="index" id="elem3"> C </p>
+    <a class="index" id="elem4" href="{{ url_for('database') }}">D</a>
+    <a class="index" id="elem5" href="{{ url_for('info') }}"> E </a>
+    <a class="index" id="elem7" href="{{ url_for('loop') }}">♁ </a>
+  </div>
+  <div class="introtext">
+    <h2>Learning from your texts </h2>
+    <div class="datatext">
+      <p> Divided in 7 groups, here you can see how this algorithm is grouping all the text uploaded by users.
+        <br>Everyone can decide what content to teach and to remove to this machine.
+        <br> The clusters are made by the algorithm itself and change each time content is uploaded or deleted. </p>
+    </div>
+  </div>
+  <div class="data-container">
+
+    {% for name, info in data.items() %}
     <div class="json-database cluster-{{ info['cluster'] }}">
       <a href="{{ url_for('content', name = name) }}">
         {{ info['content'] | truncate(255) }}
       </a>
-      <!-- <h2 id="write" > Something in here</h2> -->
     </div>
 
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
 
 
 
-
+  <script>
+    $('#elem1').css('color', 'white');
+    $('#elem1').css('background-color', 'black');
+    $('#elem4').css('color', 'black');
+    $('#elem4').css('background-color', 'white');
+  </script>
 </body>
+
 </html>

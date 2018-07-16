@@ -13,6 +13,7 @@ body,html{
   user-select: none;
   font-size: 18px;
   line-height: 22px;
+  letter-spacing: normal;
 }
 @media (min-width: 60rem){
 .tab #throbber {
@@ -28,7 +29,7 @@ body,html{
   font-family: 'Btp', monospace;
   font-weight: 300;
   display: inline-block; 
-  font-size: 34px;
+  font-size: 1.8em;
 }
 
 @-webkit-keyframes bounce {
@@ -68,57 +69,70 @@ body,html{
 #begin{
   margin-top: 50px;
   cursor:pointer;
-  font-size: 23px;
+  font-size: 1.1em;
   font-weight: 300;
-  letter-spacing: 1px;
   max-height: 350px;
   width: 300px;
   border: 1px solid;
+}
+#begin:active{
+  background-color: white;
+  color: black;
 }
 #parse{
   display: block;
   cursor:pointer;
-  font-size: 23px;
+  font-size: .8em;
   font-weight: 300;
-  letter-spacing: 1px;
   max-height: 350px;
   width: 300px;
-  border: 1px solid;
-  
+  border: 1px solid white;
+  background: black;
+  color: white;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;  
+}
+#parse:active{
+  background-color: white;
+  color: black;
 }
 #intro{
   cursor:pointer;
-  font-size: 20px;
+  font-size: 1.1em;
   font-weight: 300;
-  letter-spacing: 0px;
   display: block;
   
 }
 .centeralign > #upload{
   
-    float: left;
-    border: 1px solid;
-    padding: 10px;
-    float: left;
+
     position: absolute;
     bottom: 0;
     left: 0;
 }
 #upload{
   font-family: 'Btp', monospace;
-  font-weight: 300;
-  cursor: pointer;
-  font-size: 23px;
-  font-weight: 300;
-  letter-spacing: -1px;
-  color: white;
-  margin-bottom: 20px;
-  /* margin-top: 20px; */
-  width: 300px;
-  text-align: center;
+    font-weight: 300;
+    cursor: pointer;
+    font-weight: 300;
+;
+letter-spacing:normal;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    z-index: 400;
+    color: white;
+    font-family: 'Btp', monospace;
+    font-weight: 300;
+    font-size: 1.1em;
+    display: none;
 }
-p#upload:active{
-  color: #a26177;
+
+#upload:active{
+  color:black;
+  background-color: white;s
 }
 a{
   text-decoration: none;
@@ -203,7 +217,6 @@ a{
   font-style: normal;
   padding: 0;
   margin: 0;
-  letter-spacing: -1px;
 }
 .italic{
   padding: 10px;
@@ -240,7 +253,6 @@ a{
   font-style: normal;
   padding: 0;
   margin: 0;
-  letter-spacing: -1px;
   padding: 1%;
   padding-right: 15%;
 }
@@ -253,7 +265,6 @@ a{
   font-weight: lighter;
   padding: 0;
   margin: 0;
-  letter-spacing: -1px;
   padding-bottom: 1%;
   padding-right: 15%;
 }
@@ -263,7 +274,6 @@ p{
   font-style: normal;
   padding: 0;
   margin: 0;
-  letter-spacing: -1px;
 }
 
 h3{
@@ -274,8 +284,7 @@ h3{
   color: black;
   padding: 0;
   margin: 0;
-  font-size: 32px;
-  letter-spacing: -1px;
+  font-size: 1.7em;
 
 }
 
@@ -297,13 +306,13 @@ h3{
 .container{
   width: 100%;
   display: flex;
-  margin-bottom: 300px;
-  padding-top: 100px;
+  padding-top: 50px; 
   display: none;
+   overflow: hidden;
 }
 .data-container{
   width: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .secondpart{
   display: none;
@@ -311,7 +320,8 @@ h3{
 .col1{
   float: left;
   display: flex;
-  flex: 3;
+  /* flex: 3; */
+  width: 80%;
   flex-wrap: wrap;
   padding: 1%;
   min-height: 600px;
@@ -319,8 +329,8 @@ h3{
 }
 
 #input > p {
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 1.6em;
+  line-height: 2em;
 
 }
 .centeralign{
@@ -334,16 +344,19 @@ h3{
 .datatext{
   float: left;
   display: flex;
-display: block;
+  display: block;
   flex:2;
-  padding: 1%;
   width: 100%;
   color: white;
   padding-bottom: 50px;
-  padding-top: 100px;
+  font-size: 1em;
+  padding-left: 1%;
+ 
 }
-.datatext > h2{
-  width: 60%;
+.datatext > p{
+  width: 80%;
+  font-family: 'Btp', monospace;
+  font-weight: 300;
 }
 
 
@@ -409,7 +422,7 @@ display: block;
 .col6>p{
   font-family: 'Btp', monospace;
   font-weight: 300;
-  font-size: 32px;
+  font-size: 1.7em;
   float: left;
   border: 1px solid;
   padding: 10px;
@@ -422,16 +435,15 @@ display: block;
 .col6>p>a{
   font-family: 'Btp', monospace;
   font-weight: 300;
-  font-size: 32px;
+  font-size: 1.7em;
   float: left;
   border: 1px solid;
   padding: 10px;
   float: left;
   white-space: flex;
   cursor: pointer;
-  font-size: 23px;
+  font-size: 1.1em;
   font-weight: 300;
-  letter-spacing: -1px;
   color: white;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -440,60 +452,94 @@ text-align: center;
 }
 .texteditor{
   width: 100%;
-  height: 100%;
+  min-height: 50vh;
   background-color: black;
   display: flex;
   padding: 5px;
 
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 1.3em;
+  line-height: 1.1em;
+  letter-spacing: -1px;
   
 }
 
 #wrapper{
   text-align: center;
 }
+#wrapper:active{
+  background-color: white;
+  color: black;
+}
 #form{
   display: inline-block;
 
 }
-.menucontainer > #info{
-  float: right;
-  padding-right: 1%;
-  cursor: pointer;
-  font-size: 23px;
-  font-weight: 300;
-  letter-spacing: 1px;
+.menucontainer{
+  font-family: 'Btp', monospace;
+
+  background-color: black;
+  /* height: 60px; */
+  border-bottom: solid 1px white;
+  float: left;
+  min-width: 100%;
+  z-index: 100;
+}
+.menuaction{
+  font-family: 'Btp', monospace;
+
+  background-color: black;
+  border-bottom: solid 1px white;
+  float: left;
+  min-width: 100%;
+  top:49px;
+  z-index: 100;
 
 }
-.menucontainer > #menu-data{
-  color: black;
-  float: right;
-  padding-right: 1%;
-  cursor: pointer;
-  font-size: 23px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  
 
-}
+
 #menu-data > a:active{
   color: #a26177;
 }
-.menucontainer > p{
+.menucontainer > p, .menucontainer > a{
   z-index: 400;
-
-  font-family: 'Btp', monospace;
-  font-weight: 300;
-  font-size: 32px;
+  font-weight: normal;
+  font-size: 1.3em;
   float: left;
   padding-left: 1%;
   color: white;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
-.menucontainer > a{
+.index{
+  font-family: 'Btp', monospace;
+  display: flex;
+  font-weight: normal;
+  width: 14.666%;
+}
+
+#elem1, #elem2,#elem3,#elem4,#elem5,#elem6,#elem7{
+  background-color: black;
+  padding: 1%;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
+#elem3{
+color: #888;
+}
+ontainer > a{
+  font-family: 'Btp', monospace;
+  font-weight: normal;
+
+}
+#elem1{
+  background-color: white;
+  color: black;
+}
+
+
+
 .menucontainer > p:active{
   text-decoration: none;
   color: #a26177;
@@ -502,20 +548,10 @@ text-align: center;
   text-decoration: none;
   color: #a26177;
 }
-.menucontainer > p > a{
-  
-  z-index: 400;
-  color: white;
 
-  font-family: 'Btp', monospace;
-  font-weight: 300;
-
-  font-size: 23px;
-  float: left;
-}
 
 .info_title > h1{
-  font-size: 24px;
+  font-size: 1.3em;
   font-weight: 300;
 }
 
@@ -525,28 +561,24 @@ text-align: center;
   height: 100%;
   background-color: black;
   z-index: 100;
-  font-size: 23px;
+  font-size: 1.3em;
   font-weight: 300;
-  letter-spacing: 1px;
   padding: 1%;
 color: white
 }
-.menucontainer{
-  background-color: black;
-  
-  height: 60px;
-  border-bottom: solid 1px white;
-  float: left;
-  width: 100%;
-  position: fixed;
-}
+
 .menushadow{
   background: linear-gradient(to bottom, black 0, rgba(154, 202, 255, 0) 500px);
 
 }
 .explain{
-  /* min-height: 50px; */
+  font-family: 'Btp', monospace;
+  font-weight: 300;
+  max-width: 95%;
+  margin-left: 0;
   width: 100%;
+  color: white;
+  margin-bottom:20px;
 }
 
 .space{
@@ -570,8 +602,7 @@ color: white
   float: left;
   font-weight: 300;
 
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 0.8em;
 
 }
 #middle{
@@ -604,9 +635,9 @@ color: white
 h2{
   font-family: 'Btp', monospace;
   color:white;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-size: 1.1em;
+    line-height: 1.2em;
+  font-weight: normal;
   margin-top:  0;
   padding-top:  0;
 }
@@ -616,8 +647,7 @@ h3{
   font-weight: 300;
 
   color: white;
-  font-size: 24px;
-  letter-spacing: 1px;
+  font-size: 1.3em;
   font-weight: 300;
 }
 
@@ -642,13 +672,13 @@ h3{
 
 }
 .title{
-  font-size: 40px;
+  font-size: 2.2em;
   font-weight: 100;
 
 }
 .text{
   text-align:left;
-  font-size: 30px;
+  font-size: 1.3em;
   line-height: 36px;
 
 }
@@ -659,9 +689,7 @@ h3{
 
 #output{
   display: none;
-  font-size: 30px;
-  line-height: 36px;
-
+  letter-spacing: -1px;
 }
 #output > p{
   color: #444;
@@ -682,11 +710,14 @@ form{
   /* height: 600px; */
   /* max-height: 600px; */
   padding-bottom: 20px;
-color:white;
+  color:white;
 
 }
-form  > button{
+form  > a.button, form > button{
   color: white;
+  display: inline-block;
+  overflow: hidden;
+  color:white;
 }
 .content {
 
@@ -695,18 +726,17 @@ form  > button{
 
 }
 .introtext{
-  min-height: 100px;
     padding: 1%;
     float: left;
-    font-size: 22px;
-    line-height: 26px;
-    letter-spacing: -1px;
+    font-size: 1.1em;
+    line-height: 1.2em;
+;
+letter-spacing:normal;
     color: white;
     /* border-bottom: 1px solid white; */
     display: block;
-    margin-top: 200px;
-    padding-bottom: 500px;
-}
+    margin-top: 50px;
+  }
 .introtext > p{
   font-family: 'Btp', monospace;
   font-weight: 300;
@@ -714,23 +744,24 @@ form  > button{
   margin: 1%;
   margin-left: 0;
 }
-button{
+a.button, button{
 
   background: none;
   font-family: 'Btp', monospace;
   font-weight: 300;
   border: none;
   color: white;
-  font-size: 24px;
-  letter-spacing: 1px;
+  font-size: 1.3em;
   font-weight: 300;
   cursor: pointer;
   padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
 
 }
-button:focus{
+a.button:focus, button:focus{
   outline: 0px solid transparent;
-  color: #a26177;
+  color: black;
 }
 .fulltext{
   padding-left: 10%;
@@ -741,21 +772,45 @@ button:focus{
   margin: 1%;
   width: 80%;
   float: left;
-  font-size: 26px;
-  line-height: 32px;
-  letter-spacing: -1px;
+  font-size: 1.4em;
+  line-height: 1.2em;;
 
 }
-.infotext{
+.infotext {
   padding: 1%;
   margin: 1%;
   width: 96%;
+  margin-top: 50px;
   float: left;
-  font-size: 26px;
-  line-height: 32px;
-  letter-spacing: -1px;
+  color: white;
+}
+.infotext >p{
+  font-size: 1.4em;
+  line-height: 1.2em;
+  color: white;
+}
 
-color: white;
+.logo{
+  display: block;
+  color: white;
+  font-size: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+.credits{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.credits:first-of-type{
+  margin-top: 50px;
+}
+.introtext > p:last-of-type{
+margin-bottom: 50px;
 }
 .json-database{
   margin:1%;
@@ -763,10 +818,7 @@ color: white;
   width: 15%;
   height:500px;
   float: left;
-border: 1px solid white;
-
-  /* font-size: 0.8em;
-    line-height: 1.2em; */
+  border: 1px solid white;
 }
 
 
@@ -780,7 +832,7 @@ border: 1px solid white;
   color:black;
 }
 .cluster-None:hover{
-  box-shadow: 0 10px 35px white;
+ box-shadow: 0 10px 35px white
 }
 .fulltext.cluster-None{
   color: white;
@@ -790,33 +842,83 @@ border: 1px solid white;
 }
 .cluster-0 > a{
   color: #4F89FD;
+  color: white;
+
+}
+a::before{
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-family: 'Btp', monospace;
+
+}
+.cluster-0 > a::before{
+  content: "☻ ";
+  content: "1 ";
+
+  display: block;
+}
+.cluster-1 > a::before{
+  content: "☼ ";
+  content: "2 ";
+  display: block;}
+.cluster-2 > a::before{
+  content: "☁ ";
+  content: "3 ";
+  display: block;}
+.cluster-3 > a::before{
+  content: "⋆ ";
+  content: "4 ";
+
+  display: block;
+}
+.cluster-4 > a::before{
+  content: "⌖ ";
+  content: "5 ";
+
+  display: block;
+}
+.cluster-5 > a::before{
+  content: "◊ ";
+  content: "6 ";
+
+  display: block;
+}
+.cluster-6 > a::before{
+  content: "◊ ";
+  content: "7 ";
+
+  display: block;
 }
 .cluster-0:hover{
-  box-shadow: 0 10px 35px #4F89FD;
+ box-shadow: 0 10px 35px white
 }
 .fulltext.cluster-0{
   color: #4F89FD;
+  color: white;
   box-shadow:none;
 
 
 }
 .cluster-1 >a{
  color: #5FC996;
+ color: white;
 }
 .cluster-1:hover{
-  box-shadow: 0 10px 35px #5FC996;
+ box-shadow: 0 10px 35px white
 }
 .fulltext.cluster-1{
   color: #5FC996;
+  color: white;
   box-shadow:none;
 
 
 }
 .cluster-2  >a{
   color: #a26177;
+  color: white;
 }
 .cluster-2:hover{
-  box-shadow: 0 10px 35px #a26177;
+ box-shadow: 0 10px 35px white
 
 }
 .fulltext.cluster-2{
@@ -827,55 +929,65 @@ border: 1px solid white;
 }
 .cluster-3 >a{
   color: #5FC996;
+  color: white;
+
 }
 .cluster-3:hover{
-  box-shadow: 0 10px 35px #5FC996;
+ box-shadow: 0 10px 35px white
 }
 .fulltext.cluster-3{
   color: #5FC996;
+  color: white;
   box-shadow:none;
 
 
 }
 .cluster-4 >a{
   color: #CCCCCC;
+  color: white;
 }
 .cluster-4:hover{
-  box-shadow: 0 10px 35px #CCCCCC;
+ box-shadow: 0 10px 35px white
 }
 .fulltext.cluster-4{
   color: #CCCCCC;
+  color: white;
   box-shadow:none;
 
 
 }
 .cluster-5 >a{
   color: #E5D18E;
+  color: white;
 }
 
 .cluster-5:hover{
-  box-shadow: 0 10px 35px #E5D18E;
+ box-shadow: 0 10px 35px white
 }
 .fulltext.cluster-5{
   color: #E5D18E;
+  color: white;
   box-shadow:none;
 
 
 }
 .cluster-6 >a{
   color: #EF6AA2;
+  color: white;
 }
 .cluster-6:hover{
-  box-shadow: 0 10px 35px #EF6AA2;
+ box-shadow: 0 10px 35px white
 }
 .fulltext.cluster-6{
   color: #EF6AA2;
+  color: white;
   box-shadow:none;
 
 
 }
 .cluster-7 >a {
   color: blue;
+  color: white;
 }
 
 [contenteditable]{
