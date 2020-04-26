@@ -13,29 +13,6 @@ def index():
     """
     return render_template('index.html')
 
-@app.route('/start', methods=['GET'])
-def start():
-    """
-    Action to render home page.
-    """
-    return render_template('start.html')
-    
-@app.route('/loop', methods=['GET'])
-def loop():
-    """
-    Action to render home page.
-    """
-    return render_template('loop.html')
-
-
-@app.route('/info', methods=['GET'])
-def info():
-    """
-    Action to render home page.
-    """
-    return render_template('info.html')
-
-
 @app.route('/database', methods=['GET'])
 def database():
     """

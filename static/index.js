@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function () {
   * Fetch analysis results from API.
   *
   * @param {string} text Text to be analyzed.
-  * @returns {Promise<Array>} Array of analysis results.
+  * @returns {Promise<prray>} Array of analysis results.
   */
   var fetchFromApi = function (text) {
     var body = new FormData();
@@ -76,9 +76,6 @@ window.addEventListener('DOMContentLoaded', function () {
   var parseBtn = document.getElementById('parse');
   var uploadBtn = document.getElementById('upload');
 
-
-
-
   uploadBtn.addEventListener('click', function (event) {
     event.preventDefault();
     event.stopPropagation();
@@ -134,7 +131,8 @@ window.addEventListener('DOMContentLoaded', function () {
       })
       .map(function (a) {
         var opacity = Math.max(Math.min((a[1] - 30) * 2, 100),2);
-        return '<a style="opacity: ' + (opacity / 100)  + '"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + opacity/100 + ';" href="#">' + a[0]+ '</a> <!-- <h3>'  + a[1] + '%</h3> -->';
+        // return '<p style="opacity: ' + (opacity / 100)  + '"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + opacity/100 + ';" >' + a[0]+ '</p>  <h3>'  + a[1] + '% Male</h3>';
+        return '<p>' + a[0]+ '</p>  <h3>'  + a[1] + '% Female</h3>';
       })
       .join('<br>');
 
@@ -148,48 +146,7 @@ window.addEventListener('DOMContentLoaded', function () {
           a.addEventListener('click', function (event) {
             event.preventDefault();
             var word = a.innerText;
-            getSimilarWordsFromApi(word, "she")
-            .then(function (res) {
-              var associations= document.getElementById('associations');
-                associations.innerHTML = res
-                   .map(function (tuple) {
-                    var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                    return '<span class="female" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
-                  })
-                  .join('<br>');
-                associations.querySelectorAll('span')
-                  .forEach(function (a) {
-                    a.addEventListener('click', function (event) {
-                      event.preventDefault();
-                      var word = a.innerText;
-                      getSimilarWordsFromApi(word, "she")
-                      .then(function (res) {
-                          document.getElementById('second_associations').innerHTML = res
-                            .map(function (tuple) {
-                              var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                              return '<span class="female" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">'+ tuple[0] + '</span>';
-                            })
-                            .join('<br>');
-                            second_associations.querySelectorAll('span')
-                              .forEach(function (a) {
-                                a.addEventListener('click', function (event) {
-                                  event.preventDefault();
-                                  var word = a.innerText;
-                                  getSimilarWordsFromApi(word, "she")
-                                  .then(function (res) {
-                                      document.getElementById('third_associations').innerHTML = res
-                                        .map(function (tuple) {
-                                          var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                                          return '<span class="female" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
-                                        })
-                                        .join('<br>');
-                                    });
-                                });
-                              });
-                        });
-                    });
-                  });
-              });
+            
           });
         });
 
@@ -209,7 +166,8 @@ window.addEventListener('DOMContentLoaded', function () {
       })
       .map(function (a) {
         var opacity = Math.max(Math.min((a[1] - 30) * 2, 100),2);
-        return '<a style="opacity: ' + (opacity / 100) + '"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + opacity/100 + ';" href="#">' + a[0]+ '</a> <!-- <h3>'  + a[1] + '%</h3> -->';
+        // return '<p style="opacity: ' + (opacity / 100) + '"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + opacity/100 + ';" >' + a[0]+ '</p>  <h3>'  + a[1] + '% Female</h3>';
+        return '<p >' + a[0]+ '</p>  <h3>'  + a[1] + '% Male</h3>';
       })
       .join('<br>');
 
@@ -219,49 +177,7 @@ window.addEventListener('DOMContentLoaded', function () {
           a.addEventListener('click', function (event) {
             event.preventDefault();
             var word = a.innerText;
-            getSimilarWordsFromApi(word, "he")
-            .then(function (res) {
-                var associations= document.getElementById('associations');
-                associations.innerHTML = res
-                  .map(function (tuple) {
-                    var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                    return '<span class="male" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
-                  })
-                  .join('<br>');
-                associations.querySelectorAll('span')
-                  .forEach(function (a) {
-                    a.addEventListener('click', function (event) {
-                      event.preventDefault();
-                      var word = a.innerText;
-                      getSimilarWordsFromApi(word, "he")
-                      .then(function (res) {
-                        var second_associations = document.getElementById('second_associations');
-                         second_associations.innerHTML = res
-                            .map(function (tuple) {
-                              var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                              return '<span class="male" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
-                            })
-                            .join('<br>');
-                            second_associations.querySelectorAll('span')
-                              .forEach(function (a) {
-                                a.addEventListener('click', function (event) {
-                                  event.preventDefault();
-                                  var word = a.innerText;
-                                  getSimilarWordsFromApi(word, "he")
-                                  .then(function (res) {
-                                      document.getElementById('third_associations').innerHTML = res
-                                        .map(function (tuple) {
-                                          var opacity = Math.max(Math.min((tuple[1] - 30) * 2, 100),0.2);
-                                          return '<span class="male" style="opacity: ' + tuple[1] +'"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + tuple[1] +  ';" href="#">' + tuple[0] + '</span>';
-                                        })
-                                        .join('<br>');
-                                    });
-                                });
-                              });
-                        });
-                    });
-                  });
-              });
+            
           });
         });
 

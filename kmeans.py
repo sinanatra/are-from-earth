@@ -7,8 +7,8 @@ import pickle
 from random import shuffle
 from multiprocessing import Process
 
-def save_model(max_epochs=100):
-    print('Sto partendo')
+def save_model(max_epochs = 50):
+    print('Clustering')
     test = dict()
     with os.scandir('./data') as scanner:
         for entry in scanner:

@@ -2,48 +2,97 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Are from Earth</title>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
     <script type="text/javascript" src="static/index.js"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="static/reset.css" />
     <link rel="stylesheet" href="static/index.css" />
-    <link rel="stylesheet" href="static/font/font.css" />
+
 </head>
 
 <body>
+    <button id="upload" style="display: none;"> Analyse your text </button>
 
+    <header>
+        <a class="index" id="elem1" href="{{ url_for('index') }}">Learning from Google</a>
+        <a class="index" id="elem2" href="{{ url_for('database') }}">Learning from your text</a>
+    </header>
 
-    <div class="menucontainer">
-        <a class="index" id="elem1" href="{{ url_for('index') }}">A</a>
-        <a class="index" id="elem2" href="{{ url_for('start') }}"> B </a>
-        <p class="index" id="elem3"> C </p>
-        <a class="index" id="elem4" href="{{ url_for('database') }}">D</a>
-        <a class="index" id="elem5" href="{{ url_for('info') }}"> E </a>
-        <a class="index" id="elem7" href="{{ url_for('loop') }}">♁ </a>
-    </div>
-
-    <div class="introtext">
-        <h2>Learning from Google </h2>
-
-        <p>The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already
-            present in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns
-            from these stereotypes.
+    <section class="intro">
+        <h2>Men are from Earth, Women are from Earth, and Ai are from Earth too.</h2>
+        <p>
+            The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes
+            already present in data. Whenever data reflects biases of the broader society, the learning algorithm
+            captures and learns from these stereotypes.
         </p>
-        <p>On this website we visualise the connection that Word2Vec, an algorithm used by Google, does and we propose a new
-            alternative by asking the user to upload their text to generate a newer Artificial Intelligence, in a more democratic
-            way.</p>
-        <a id="begin" class="button" href="{{ url_for('start') }}">Begin</a>
-
-
-    </div>
-
-
+        <br>
+        <p>
+            On this website we visualise how <em>text embeddings</em> trained on <em>Google News</em> represent gender.
+        </p>
+    </section>
+    <section class="container">
+        <div class="explaination-container">
+            <button class="explain" id="write"> Start by writing something</button>
+            <button id="parse" onmousedown="loader()"> Analyse your text </button>
+        </div>
+        <div class="write">
+            <div id="input" contenteditable="true">
+                <p>What I liked about her, she didn't give you a lot of horse manure about what a great guy her father
+                    was. She probably knew what a phony baloney slob he was. The reason I was standing way up on Thomsen
+                    Hill, instead of down at the game, was because I'd just got back from New York with the fencing
+                    team. I was the goddam manager of the fencing team. Very big deal. We'd gone in to New York that
+                    morning for this fencing meet with McBurney School. Only, we didn't have the meet. I left all the
+                    foils and equipment and stuff on the goddam subway. It wasn't all my fault. I had to keep getting up
+                    to look at this map, so we'd know where to get off. So we got back to Pencey around two-thirty
+                    instead of around dinnertime. The whole team ostracized me the whole way back on the train. It was
+                    pretty funny, in a way. The other reason I wasn't down at the game was because I was on my way to
+                    say good-by to old Spencer, my history teacher. He had the grippe, and I figured I probably wouldn't
+                    see him again till Christmas vacation started. He wrote me this note saying he wanted to see me
+                    before I went home. He knew I wasn't coming back to Pencey.</p>
+            </div>
+        </div>
+        <div class="analysis">
+            <div class="explaination-container">
+                <p> Here you can see what gender connections the algorithm does.
+                </p><br>
+                <p>In green words which are considered to be </p>
+                <p class="female">female</p>
+                <p>, in purple </p>
+                <p class="male">male</p>
+                <p>.</p>
+            </div>
+            <div class="texteditor">
+                <div id="output">
+                </div>
+                <p id="shescore" class="she123"></p>
+                <p id="hescore" class="he123"></p>
+            </div>
+        </div>
+    </section>
 </body>
+<script>
+    function loader() {
+        $('#output').html('<p id="throbber"><span>.</span><span>.</span><span>.</span></p>');
+        $('.write').toggle();
+        $('.analysis').toggle();
+    }
+
+    $("#write").click(function () {
+        $('.write').toggle();
+        $('.analysis').toggle();
+        $('#hescore').html('');
+        $('#shescore').html('');
+    });
+
+    document.querySelector("div[contenteditable]").addEventListener("paste", function (e) {
+        e.preventDefault();
+        var text = e.clipboardData.getData("text/plain");
+        document.execCommand("insertText", false, text);
+    });
+</script>
 
 </html>

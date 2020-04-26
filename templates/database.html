@@ -2,19 +2,15 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Are from Earth</title>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
   <script type="text/javascript" src="static/index.js"></script>
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="static/reset.css" />
   <link rel="stylesheet" href="static/index.css" />
-  <link rel="stylesheet" href="static/font/font.css" />
-
 
   <script type="text/javascript">
     function htmlToText(elem) {
@@ -32,52 +28,72 @@
   </script>
 </head>
 
-<body>
+<body class="grey">
+  <button id="parse" style="display: none;"> Analyse your text </button>
 
+  <header>
+    <a class="index" id="elem1" href="{{ url_for('index') }}">Learning from Google</a>
+    <a class="index" id="elem2" href="{{ url_for('database') }}">Learning from your text</a>
+  </header>
 
-  <div class="menucontainer" style="border-bottom: solid 1px black;">
-
-    <a class="index" id="elem1" href="{{ url_for('index') }}">A</a>
-    <a class="index" id="elem2" href="{{ url_for('start') }}"> B </a>
-    <p class="index" id="elem3"> C </p>
-    <a class="index" id="elem4" href="{{ url_for('database') }}">D</a>
-    <a class="index" id="elem5" href="{{ url_for('info') }}"> E </a>
-    <a class="index" id="elem7" href="{{ url_for('loop') }}">♁ </a>
-  </div>
-  <div class="introtext" style="color: black;">
-    <h2 style="color: black;">Learning from your texts </h2>
-    <div class="datatext" style="color: black;">
-      <p> Divided in 7 groups, here you can see how this algorithm is grouping all the text uploaded by users.
-        <br>The clusters are fluid and made by the algorithm itself. They change each time content is uploaded or deleted. 
-        <br>These contents are used to create an alternative to the dataset showed previously by Google, leaving the ownership to users: 
-        everyone can decide what content to teach and to remove to this machine. </p>
+  <section class="intro">
+    <h2>Ai are from Earth too.</h2>
+    <p>
+      Here you can add text to the website to build an alternative test embedding dataset.
+      These contents are used to create an alternative to the dataset showed previously by Google, leaving the
+      ownership to users: everyone can decide what content to teach and to remove to this machine.
+    </p>
+  </section>
+  <section class="container">
+    <div class="explaination-container">
+      <button class="explain" id="write"> Write some text to upload</button>
+      <button id="upload"  class="togglelist" onmousedown="loader()"> Upload it and observe </button>
+    </div>
+    <div class="write">
+      <div id="input" contenteditable="true">
+        <p> She probably knew what a phony baloney slob he was</p>
       </div>
     </div>
-    <div class="data-container" style="color: black;">
-
-      {% for name, info in data.items() %}
-      <div class="json-database cluster-{{ info['cluster'] }}">
-        <a href="{{ url_for('content', name = name) }}">
-          {{ info['content'] | truncate(255) }}
-        </a>
+    <div class="analysis">
+      <div class="explaination-container">
+        <p> Divided in 7 groups, here you can see how this algorithm is grouping all the text uploaded by users.
+          The clusters are fluid and made by the algorithm itself. They change each time content is uploaded or
+          deleted.
+        </p>
       </div>
+      <div class="data-container" style="color: black;">
 
-      {% endfor %}
+        {% for name, info in data.items() %}
+        <div class="json-database cluster-{{ info['cluster'] }}">
+          <a href="{{ url_for('content', name = name) }}">
+            {{ info['content'] | truncate(200) }}
+          </a>
+        </div>
+
+        {% endfor %}
+      </div>
     </div>
+  </section>
+</body>
+<script>
+  function loader() {
+    $('#output').html('<p id="throbber"><span>.</span><span>.</span><span>.</span></p>');
+    $('.write').toggle();
+    $('.analysis').toggle();
+  }
 
+  $("#write").click(function () {
+    $('.write').toggle();
+    $('.analysis').toggle();
+    $('#hescore').html('');
+    $('#shescore').html('');
+  });
 
+  document.querySelector("div[contenteditable]").addEventListener("paste", function (e) {
+    e.preventDefault();
+    var text = e.clipboardData.getData("text/plain");
+    document.execCommand("insertText", false, text);
+  });
+</script>
 
-    <script>
-      $('.index').css('background-color', '#f6f6f6');
-
-      $('#elem1, #elem2,#elem5,#elem6,#elem7').css('color', 'black');
-      $('#elem1').css('background-color', '#f6f6f6');
-      $('#elem4').css('color', '#f6f6f6');
-      $('#elem4').css('background-color', 'black');
-      $('body').css('background-color', '#f6f6f6');
-      $('html').css('background-color', '#f6f6f6');
-
-    </script>
-  </body>
-
-  </html>
+</html>
