@@ -1,5 +1,3 @@
-This is an example Flask application to highlight gender biases in a text.
-
 Requisites
 ----------
 
