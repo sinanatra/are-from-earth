@@ -15,5 +15,3 @@ Start
 Run `FLASK_APP=server.py flask run` to start.
 
 Run `FLASK_APP=server.py FLASK_DEBUG=1 flask run` to start in debugging mode.
-
-![ScreenShot](https://vimeo.com/412366901)
