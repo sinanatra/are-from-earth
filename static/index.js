@@ -70,9 +70,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
   var input = document.getElementById('input');
-  var output = document.getElementById('output'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
-  var shescore = document.getElementById('shescore'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
-  var hescore = document.getElementById('hescore'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
+  var output = document.getElementById('output'); 
+  var shescore = document.getElementById('shescore'); 
+  var hescore = document.getElementById('hescore'); 
   var parseBtn = document.getElementById('parse');
   var uploadBtn = document.getElementById('upload');
 
@@ -100,9 +100,6 @@ window.addEventListener('DOMContentLoaded', function () {
       var sheScores = analysis[2];
       var heScores = analysis[3];
 
-      // var outputHTML = prepareOutput(text, she_analysis, 'she123');
-      // outputHTML = prepareOutput(outputHTML, he_analysis, 'he123');
-
       var outputHTML = prepareOutput(text, {
         'she123': she_analysis,
         'he123': he_analysis,
@@ -117,7 +114,6 @@ window.addEventListener('DOMContentLoaded', function () {
       var processed = [];
 
       output.innerHTML = outputHTML;
-      // Questo sarà sheScores = ['boss', 'guy', 'programmer']
       sheScores = sheScores
       .filter(function (a) {
         if (processed.indexOf(a[0]) === -1) {
@@ -131,13 +127,12 @@ window.addEventListener('DOMContentLoaded', function () {
       })
       .map(function (a) {
         var opacity = Math.max(Math.min((a[1] - 30) * 2, 100),2);
-        // return '<p style="opacity: ' + (opacity / 100)  + '"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + opacity/100 + ';" >' + a[0]+ '</p>  <h3>'  + a[1] + '% Male</h3>';
         return '<p>' + a[0]+ '</p>  <h3>'  + a[1] + '% Female</h3>';
       })
       .join('<br>');
 
-      var female = document.getElementById('she123'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
-      var male = document.getElementById('he123'); // Se l'ID dell'elemento HTML è cambiato, cambia questo.
+      var female = document.getElementById('she123'); 
+      var male = document.getElementById('he123'); 
     
 
       shescore.innerHTML = sheScores;
@@ -152,7 +147,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
       processed = [];
 
-      // Questo sarà heScores = ['guy', 'boss', 'programmer']
       heScores = heScores
       .filter(function (a) {
         if (processed.indexOf(a[0]) === -1) {
@@ -166,7 +160,6 @@ window.addEventListener('DOMContentLoaded', function () {
       })
       .map(function (a) {
         var opacity = Math.max(Math.min((a[1] - 30) * 2, 100),2);
-        // return '<p style="opacity: ' + (opacity / 100) + '"' + ' onMouseOver=' + '"this.style.opacity='+ '1"'+ ' onMouseOut=' + '"this.style.opacity=' + opacity/100 + ';" >' + a[0]+ '</p>  <h3>'  + a[1] + '% Female</h3>';
         return '<p >' + a[0]+ '</p>  <h3>'  + a[1] + '% Male</h3>';
       })
       .join('<br>');

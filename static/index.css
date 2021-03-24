@@ -2,7 +2,6 @@ body,html{
   font-family: 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   width: 100%;
-  /* height: 100%; */
   margin: 0;
   font-size: 18px;
   line-height: 22px;
@@ -126,7 +125,7 @@ button:focus {outline:0;}
 
 .write {
   background: var(--female);
-  height: 80vh;
+  min-height: 80vh;
 }
 .write, .analysis {
   padding: .5rem;
