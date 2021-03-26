@@ -3,7 +3,7 @@ import json
 import codecs
 import gensim.models
 from sklearn.metrics.pairwise import cosine_similarity
-import json
+import spacy
 import os
 from time import time
 from kmeans import recluster
@@ -40,17 +40,17 @@ def get_score(w1,w2):
 
 # create a json file with whenever the "upload" button is pressed
 def upload_text(text):
-    with open("./data/data_"+str(time())+".txt","w") as file:
-        file.write(text)
-    recluster()
+	if len(text) > 0:
+		with open("./data/data_"+str(time())+".txt","w") as file:
+			file.write(text)
+		recluster()
 
 #you load the model here - depending on this, the results will be different
 # if the file is .bin check has to be True, if it's a .txt False
 file ="embeddings/reddit.txt"
 check = False
 
-model = gensim.models.KeyedVectors.load_word2vec_format(file,
-                                                       binary=check)
+model = gensim.models.KeyedVectors.load_word2vec_format(file, binary=check)
 female_names = codecs.open("./men-women/women.txt","r","utf-8").read().strip().split("\n")
 male_names = codecs.open("./men-women/men.txt","r","utf-8").read().strip().split("\n")
 
@@ -79,7 +79,7 @@ def compute_similar(word, heOrShe = 'she'):
 def compute_bias(text):
 
 	import spacy
-	nlp = spacy.load('en')
+	nlp = spacy.load('en_core_web_sm')
 
 	sentence = text
 	print(sentence)
@@ -131,13 +131,11 @@ def compute_bias(text):
 	        if check == False:
 	        	try:
 		            subj_emb = get_vector(subj[0])
-		            if get_score(subj_emb,model["he"])>get_score(subj_emb,model["she"]):
-
+		            if get_score(subj_emb,model["he"])>get_score(subj_emb,model["she"]): 
 		                final[1].append(subj[0])
 		                subj.append("he")
 
 		            else:
-		                #print (subj, "is a woman!","embed")
 		                subj.append("she")
 		                final[0].append(subj[0])
 		        except:
@@ -145,11 +143,9 @@ def compute_bias(text):
 
 	    # here you have the profession, namely the names in the sentence that are not subjects
 	    professions = [x for x in keep if x not in subjects]
-
 	    profession_names = [x[0] for x in professions]
 
 	    # for each profession, you get a score on how relevant it is for the name
-
 	    results = {x[0]:{} for x in professions}
 	    for prof in professions:
 
@@ -185,7 +181,7 @@ def compute_bias(text):
 	        try:
 	        	fin_res = abs(res[0]-res[1])
 	        	#test = (fin_res*1.0)/0.80 # 0.80 for googleNews Embeddings
-	        	test = (fin_res*1.0)/0.30 #0.60 small embeddings?
+	        	test = (fin_res*1.0)/0.30
 
 	        	test = test*100
 	        	y = (100 - test) /2
@@ -212,9 +208,7 @@ def compute_bias(text):
 		        	femalescore =  get_score(get_vector(prof),model["she"])
 		        	malescore = get_score(get_vector(prof),model["he"])
 		        	new_res = abs(femalescore-malescore)
-		        	print("new_res",new_res)
-		        	#test = (new_res*1.0)/0.80
-		        	test = (fin_res*1.0)/0.30 #0.60 small embeddings?
+		        	test = (fin_res*1.0)/0.30
 		        	test = test*100
 		        	y = (100 - test) /2
 		        	x = 100 - y + 1
@@ -232,5 +226,4 @@ def compute_bias(text):
 		        except:
 		        	continue
 
-	print("finalz",final)
 	return(final)

@@ -7,7 +7,8 @@ body,html{
   line-height: 22px;
   letter-spacing: normal;
   --clear-background: #f6f6f6;
-  --dark-background: #696969;
+  --dark-background: #828B84;
+  --dark-background-2: #5d615d;
   --female: #83BF49;
   --male: #56417D;
   background-color: var(--clear-background);
@@ -15,10 +16,10 @@ body,html{
 
 header {
   height: 36px;
-  background-color: var(--dark-background)
+  background: var(--dark-background-2);
 }
 
-header a {
+header a, .data-container a {
   vertical-align: -webkit-baseline-middle;
   color: black;
   text-decoration: none;
@@ -31,6 +32,11 @@ header #elem1 {
   padding: 10px;
 }
 
+header #elem2 {
+  background-color: var(--dark-background);
+}
+
+
 section, header a {
   padding: .5rem;
 }
@@ -41,15 +47,22 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.intro {
+.intro,.about {
   max-width: 500px;
   min-height: 350px;
   margin-top: 2rem;
   margin-bottom: 6rem;
 }
+.about{
+  min-height: 100vh;
+}
 
 .grey {
   background: var(--dark-background);
+}
+
+.background-2{
+  background: var(--dark-background-2);
 }
 
 .text-editor, .analysis {
@@ -64,13 +77,21 @@ h2 {
   padding:0;
 }
 
+#database-container{
+  background: #fefefe;
+}
+
 .container, .text-editor {
   padding-top: 0;
 }
 
 .explaination-container {
   color: var(--dark-background);
-  background-color: black;
+}
+
+.explaination-container-db {
+  color: black;
+  padding-bottom: 2rem;
 }
 
 .explaination-container * {
@@ -104,6 +125,13 @@ button {
 
 button:focus {outline:0;}
 
+form {
+  background-color: black;
+}
+
+#form {
+  display: inline-block;
+}
 
 #hescore, #shescore{
   cursor: pointer;
@@ -113,6 +141,11 @@ button:focus {outline:0;}
   background: black;
   color: var(--dark-background);
   border: none;
+}
+
+.togglelist{
+  background: white;
+  color: black;
 }
 
 .explain {
@@ -232,34 +265,22 @@ mark {
 
 
 .json-database{
-  margin-right: 1rem;
-  margin-top: 1rem;
-    padding: .5rem;
-  width: 15vw;
-  height: 300px;
+  margin-top: .5rem;
+  padding: 0.5rem;
+  width: 100%;
+  height: 60px;
   display: inline-block;
-  border: 1px solid var(--dark-background);
-  overflow: hidden;
+  border-top: 1px dashed black;
 }
 
 .json-database a {
-  color: var(--dark-background);
+  color: black;
   text-decoration: none;
 }
 
-.json-database:hover{
+/* .json-database:hover{
   box-shadow: 0 10px 35px var(--dark-background)
- }
-
-.json-database.cluster-None{
-  background-color:var(--dark-background);
-  text-decoration: none;
-}
-
-.cluster-None >a {
-  color:black;
-
-}
+ } */
 
 .cluster-None >a::before  {
   content: "Loading group ";
@@ -282,37 +303,11 @@ a::before{
   margin-bottom: 10px;
 }
 
-.cluster-0 > a::before{
+[class^="cluster-"]> a::before{
   content: "1 ";
   display: block;
 }
 
-.cluster-1 > a::before{
-  content: "2 ";
- display: block;
-}
-
-.cluster-2 > a::before{
-  content: "3 ";
-  display: block;
-}
-
-.cluster-3 > a::before{
-  content: "4 ";
-  display: block;
-}
-
-.cluster-4 > a::before{
-  content: "5 ";
-  display: block;
-}
-
-.cluster-5 > a::before{
-  content: "6 ";
-  display: block;
-}
-
-.cluster-6 > a::before{
-  content: "7 ";
-  display: block;
+::selection{
+  background-color: yellow;
 }

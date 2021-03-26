@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from __future__ import unicode_literals
 import json
 from gender import compute_bias, compute_similar, upload_text, load_files, delete_file
@@ -19,11 +20,9 @@ def database():
     Action to render the database page.
     """
     files = load_files()
-    clusterized = load_model()
-
-    data = {file: { 'content': content, 'cluster': clusterized.get(file) } for file, content in files.items()}
-    # { 'pippo.txt': { 'content': 'pippo', 'cluster': 4 } }
-
+    # clusterized = load_model()
+    # data = {file: { 'content': content, 'cluster': clusterized.get(file) } for file, content in files.items()}
+    data = {file: { 'content': content, 'cluster': 1 } for file, content in files.items()}    
     return render_template('database.html', data = data )
 
 @app.route('/database/<string:name>', methods=['GET'])
@@ -32,12 +31,13 @@ def content(name):
     Action to render the database page.
     """
     files = load_files()
-    clusterized = load_model()
+    # clusterized = load_model()
 
     try:
         lines = files[name].split("\n")
-        cluster = clusterized.get(name)
-        return render_template('content.html', lines = lines, name = name, cluster = cluster )
+        # cluster = clusterized.get(name)
+        #return render_template('content.html', lines = lines, name = name, cluster = cluster )
+        return render_template('content.html', lines = lines, name = name )
     except KeyError:
         abort(404)
 
@@ -82,13 +82,11 @@ def upload():
     Action to append and save user-provided text to a json file
     """
     text = request.form['text']
+
     uploadjson = upload_text(text)
-
     app.logger.debug('uploading %s ', text)
-
     res = make_response(json.dumps(text), 200)
     res.headers['Content-Type'] = 'application/json'
-
     return res
 
 @app.route('/delete', methods=['POST'])
@@ -97,3 +95,10 @@ def delete():
     delete_file(name)
 
     return redirect(url_for('database'))
+
+@app.route('/about', methods=['GET'])
+def about():
+    """
+    Action to render the about page.
+    """
+    return render_template('about.html')

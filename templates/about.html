@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Are from Earth</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="static/index.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="static/reset.css" />
+    <link rel="stylesheet" href="static/index.css" />
+</head>
+
+<body class="background-2">
+    <button id="upload" style="display: none;">Analyse your text </button>
+    <header>
+        <a class="index" id="elem1" href="{{ url_for('index') }}">Learning from Google</a><a class="index" id="elem2"
+            href="{{ url_for('database') }}">Learning from your text</a><a class="index" id="elem3"
+            href="./about">Info</a>
+    </header>
+
+    <section class="about">
+        <h2>Information</h2>
+        <p>
+            This project resulted from research conducted as part of the individual thesis project in the master
+            department Information Design at Design Academy Eindhoven (NL), 2019
+        </p>
+        <br>
+        <p>Designed and developed by Giacomo Nanni, <a href="http://giacomonanni.info/">Link</a>
+        </p>
+    </section>
+</body>
+
+</html>

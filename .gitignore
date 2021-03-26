@@ -8,4 +8,5 @@ instance/
 .env
 .venv
 *.txt
+*.pyc
 *.DS_STORE

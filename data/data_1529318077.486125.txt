@@ -1,2 +1,0 @@
-“It is easier to remove biases 
-from algorithms than from people, and so ultimately AI has the potential to create a future where important decisions, such as hiring, diagnoses and legal judgements, are made in a more fair way.”

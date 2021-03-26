@@ -33,7 +33,17 @@
 
 <body>
 
-  <div class="menuaction"></div>
+  <header class="menuaction">
+    <div id="wrapper">
+      <a class="index" id="elem2" href="{{ url_for('database') }}">Go back</a>
+      <div id="form">
+        <form action="{{ url_for('delete') }}" method="POST">
+          <input type="hidden" name="name" value="{{ name }}" />
+          <button id="elem1">delete</button>
+        </form>
+      </div>
+    </div>
+  </header>
 
 
   <div class="data-container">
@@ -45,15 +55,11 @@
   </div>
 
   <script>
-   $('#elem1').css('color', 'white');
-   $('#elem1').css('background-color', 'black');
-   $('body').css('background-color', '#f6f6f6');
-   $('html').css('background-color', '#f6f6f6');
-   $('.menuaction').css('background-color', '#f6f6f6');
-   $('.menucontainer').css('background-color', '#f6f6f6');
-   $('#elem4').css('background-color', '#f6f6f6');
-   $('#elem4').css('color', 'black');
- </script>
+    $('body').css('background-color', '#f6f6f6');
+    $('html').css('background-color', '#f6f6f6');
+    $('.menuaction').css('background-color', '#f6f6f6');
+    $('.menucontainer').css('background-color', '#f6f6f6');
+  </script>
 
 
 </body>

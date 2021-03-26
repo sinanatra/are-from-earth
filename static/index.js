@@ -36,9 +36,6 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   };
 
-
-
-
   /**
    * Prepare output by highlighting relevant words.
    * @param {string} text Original text.

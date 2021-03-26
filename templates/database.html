@@ -31,44 +31,40 @@
   <button id="parse" style="display: none;"> Analyse your text </button>
 
   <header>
-    <a class="index" id="elem1" href="{{ url_for('index') }}">Learning from Google</a>
-    <a class="index" id="elem2" href="{{ url_for('database') }}">Learning from your text</a>
+    <a class="index" id="elem1" href="{{ url_for('index') }}">Learning from Google</a><a class="index" id="elem2"
+      href="{{ url_for('database') }}">Learning from your text</a><a class="index" id="elem3" href="./about">Info</a>
   </header>
 
   <section class="intro">
     <h2>Ai are from Earth too.</h2>
     <p>
-      Here you can add text to the website to build an alternative test embedding dataset.
-      These contents are used to create an alternative to the dataset showed previously by Google, leaving the
-      ownership to users: everyone can decide what content to teach and to remove to this machine.
+      Everyone in this section can add text to the website.
+      These contents can be used as an alternative dataset to the one created by Google, leaving the
+      ownership to users: each person can decide what to teach and to remove to this machine.
     </p>
   </section>
-  <section class="container">
+  <section class="container" id="database-container">
     <div class="explaination-container">
       <button class="explain" id="write"> Write some text to upload</button>
-      <button id="upload"  class="togglelist" onmousedown="loader()"> Upload it and observe </button>
+      <button id="upload" class="togglelist" onmousedown="loader()"> Upload it and observe </button>
     </div>
     <div class="write">
-      <div id="input" contenteditable="true">
-        <p> She probably knew what a phony baloney slob he was</p>
-      </div>
+      <div id="input" contenteditable="true"><p></p></div>
     </div>
     <div class="analysis">
-      <div class="explaination-container">
+      <div class="explaination-container explaination-container-db">
         <p> Divided in 7 groups, here you can see how this algorithm is grouping all the text uploaded by users.
           The clusters are fluid and made by the algorithm itself. They change each time content is uploaded or
           deleted.
         </p>
       </div>
       <div class="data-container" style="color: black;">
-
         {% for name, info in data.items() %}
-        <div class="json-database cluster-{{ info['cluster'] }}">
-          <a href="{{ url_for('content', name = name) }}">
+        <a href="{{ url_for('content', name = name) }}">
+          <div class="json-database cluster-{{ info['cluster'] }}">
             {{ info['content'] | truncate(200) }}
-          </a>
-        </div>
-
+          </div>
+        </a>
         {% endfor %}
       </div>
     </div>

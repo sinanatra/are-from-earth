@@ -11,15 +11,12 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="static/reset.css" />
     <link rel="stylesheet" href="static/index.css" />
-
 </head>
 
 <body>
-    <button id="upload" style="display: none;"> Analyse your text </button>
-
+    <button id="upload" style="display: none;">Analyse your text </button>
     <header>
-        <a class="index" id="elem1" href="{{ url_for('index') }}">Learning from Google</a>
-        <a class="index" id="elem2" href="{{ url_for('database') }}">Learning from your text</a>
+        <a class="index" id="elem1" href="{{ url_for('index') }}">Learning from Google</a><a class="index" id="elem2" href="{{ url_for('database') }}">Learning from your text</a><a class="index" id="elem3" href="./about">Info</a>
     </header>
 
     <section class="intro">
@@ -41,29 +38,12 @@
         </div>
         <div class="write">
             <div id="input" contenteditable="true">
-                <p>What I liked about her, she didn't give you a lot of horse manure about what a great guy her father
-                    was. She probably knew what a phony baloney slob he was. The reason I was standing way up on Thomsen
-                    Hill, instead of down at the game, was because I'd just got back from New York with the fencing
-                    team. I was the goddam manager of the fencing team. Very big deal. We'd gone in to New York that
-                    morning for this fencing meet with McBurney School. Only, we didn't have the meet. I left all the
-                    foils and equipment and stuff on the goddam subway. It wasn't all my fault. I had to keep getting up
-                    to look at this map, so we'd know where to get off. So we got back to Pencey around two-thirty
-                    instead of around dinnertime. The whole team ostracized me the whole way back on the train. It was
-                    pretty funny, in a way. The other reason I wasn't down at the game was because I was on my way to
-                    say good-by to old Spencer, my history teacher. He had the grippe, and I figured I probably wouldn't
-                    see him again till Christmas vacation started. He wrote me this note saying he wanted to see me
-                    before I went home. He knew I wasn't coming back to Pencey.</p>
+                <p>She is an engineer, while he is a nurse.</p>
             </div>
         </div>
         <div class="analysis">
             <div class="explaination-container">
-                <p> Here you can see what gender connections the algorithm does.
-                </p><br>
-                <p>In green words which are considered to be </p>
-                <p class="female">female</p>
-                <p>, in purple </p>
-                <p class="male">male</p>
-                <p>.</p>
+                <p>Here you can see what gender connections the algorithm does.</p><br><p>In green words which are considered to be </p> <p class="female">female</p><p>, in purple </p> <p class="male">male</p><p>.</p>
             </div>
             <div class="texteditor">
                 <div id="output">
