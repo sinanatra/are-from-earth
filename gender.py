@@ -47,7 +47,7 @@ def upload_text(text):
 
 #you load the model here - depending on this, the results will be different
 # if the file is .bin check has to be True, if it's a .txt False
-file ="embeddings/reddit.txt"
+file ="embeddings/glove_model2.txt"
 check = False
 
 model = gensim.models.KeyedVectors.load_word2vec_format(file, binary=check)
@@ -77,7 +77,6 @@ def compute_similar(word, heOrShe = 'she'):
 
 def compute_bias(text):
 
-	import spacy
 	nlp = spacy.load('en_core_web_sm')
 
 	sentence = text
@@ -167,7 +166,7 @@ def compute_bias(text):
 	                final[1].append(prof)
 
 	        except:
-	            print (e)
+	            continue
 
 	        res = []
 	        for subj in subjects:
