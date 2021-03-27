@@ -1,4 +1,0 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f # Don't interfere with static files
-RewriteRule ^(.*)$ /experiments/are-from-earth/server.cgi/$1 [L]
-
