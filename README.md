@@ -1,5 +1,7 @@
 # Men are from Earth, Women are from Earth, and Ai are from Earth too.
 
+[![Watch the video](https://giacomonanni.info/media/pages/archive/64a7b6eef5-1597062409/00are.png)](https://vimeo.com/412366901)
+
 The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already present in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns from these stereotypes.
 
 On this website we visualise how text embeddings trained on Google News represent gender.
