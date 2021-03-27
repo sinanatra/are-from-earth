@@ -40,43 +40,39 @@
     <p>
       Everyone in this section can add text to the website.
       These contents can be used as an alternative dataset to the one created by Google, leaving the
-      ownership to users: each person can decide what to teach and to remove to this machine.
+      ownership to users: anyone can decide what to teach and to remove to this machine.
+    </p>
+    <br>
+    <p>
+      Download the current <a href="model.pkl" download>model</a>.
     </p>
   </section>
   <section class="container" id="database-container">
     <div class="explaination-container">
       <button class="explain" id="write"> Write some text to upload</button>
-      <button id="upload" class="togglelist" onmousedown="loader()"> Upload it and observe </button>
+      <button id="upload" class="togglelist" onmousedown="loader()"> Upload it and read </button>
     </div>
     <div class="write">
-      <div id="input" contenteditable="true"><p></p></div>
+      <div id="input" contenteditable="true"></div>
     </div>
-    <div class="analysis">
-      <div class="explaination-container explaination-container-db">
-        <p> Divided in 7 groups, here you can see how this algorithm is grouping all the text uploaded by users.
-          The clusters are fluid and made by the algorithm itself. They change each time content is uploaded or
-          deleted.
-        </p>
-      </div>
-      <div class="data-container" style="color: black;">
-        {% for name, info in data.items() %}
-        <a href="{{ url_for('content', name = name) }}">
-          <div class="json-database cluster-{{ info['cluster'] }}">
-            {{ info['content'] | truncate(200) }}
-          </div>
-        </a>
-        {% endfor %}
-      </div>
+    <div class="data-container" style="color: black;">
+      {% for name, info in data.items() %}
+      <a href="{{ url_for('content', name = name) }}">
+        <div class="json-database cluster-{{ info['cluster'] }}">
+          {{ info['content'] | truncate(200) }}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
     </div>
   </section>
 </body>
 <script>
   function loader() {
-    $('#output').html('<p id="throbber"><span>.</span><span>.</span><span>.</span></p>');
     $('.write').toggle();
     $('.analysis').toggle();
   }
-
+  
   $("#write").click(function () {
     $('.write').toggle();
     $('.analysis').toggle();

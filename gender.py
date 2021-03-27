@@ -61,7 +61,6 @@ male_names = [x.split()[0].lower() for x in male_names]
 female_names = [x.split()[0].lower() for x in female_names if x.split()[0].lower() not in male_names]
 
 # you have way more female name then men, so later we will first check the men, then the female
-print (len(female_names),len(male_names))
 
 
 def compute_similar(word, heOrShe = 'she'):
@@ -69,11 +68,11 @@ def compute_similar(word, heOrShe = 'she'):
 		mostSimilar = model.most_similar([word, heOrShe ], topn = 20)
 		#parole = [(word, float(get_score(get_vector(word.lower()), model[heOrShe]))) for word, _ in mostSimilar if get_score(get_vector(word.lower()), model[heOrShe]) > 0]
 		#parole.sort(key=lambda a: a[1], reverse=True)
-		print(mostSimilar)		
+
 		return mostSimilar
 
-	except Exception as e:
-		print(e)
+	except:
+		return
 		
 
 def compute_bias(text):
@@ -82,7 +81,7 @@ def compute_bias(text):
 	nlp = spacy.load('en_core_web_sm')
 
 	sentence = text
-	print(sentence)
+
 	doc = nlp(sentence)
 	final = [ [],[],[],[] ]
 
@@ -167,7 +166,7 @@ def compute_bias(text):
 	            else:
 	                final[1].append(prof)
 
-	        except Exception as e:
+	        except:
 	            print (e)
 
 	        res = []

@@ -77,7 +77,8 @@ window.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
     event.stopPropagation();
 
-    var text = input.innerText;
+    // var text = input.innerText;
+    var text = input.innerHTML.replace(/<div>/g,'\n').replace(/<br>/g,'\n').replace(/\<\/div\>/g,'')
     saveToRemote(text);
   });
 

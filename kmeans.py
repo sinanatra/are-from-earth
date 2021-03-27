@@ -8,7 +8,6 @@ from random import shuffle
 from multiprocessing import Process
 
 def save_model(max_epochs = 50):
-    print('Clustering')
     test = dict()
     with os.scandir('./data') as scanner:
         for entry in scanner:
@@ -32,6 +31,7 @@ def save_model(max_epochs = 50):
     #train a Doc2Vec model
     for epoch in range(max_epochs):
         print('iteration {0}'.format(epoch))
+
         model.train(tagged_data,total_examples=model.corpus_count,epochs=model.epochs)
 
         # decrease the learning rate
@@ -48,7 +48,6 @@ def load_model(clusters=7):
     with open('model.pkl', 'rb') as f:
         trained_model = pickle.load(f)
 
-    print(kmeans(trained_model.docvecs, 3))
     return
     centroids, _ = kmeans(trained_model.docvecs, trained_model.docvecs[range(clusters)])
     super_centroid = sum(centroids) / len(centroids)
@@ -71,7 +70,3 @@ def recluster():
     reclustering[0].start()
 
     return reclustering[0]
-
-if __name__ == '__main__':
-    save_model()
-    print(load_model())

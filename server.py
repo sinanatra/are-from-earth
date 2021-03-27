@@ -23,6 +23,7 @@ def database():
     # clusterized = load_model()
     # data = {file: { 'content': content, 'cluster': clusterized.get(file) } for file, content in files.items()}
     data = {file: { 'content': content, 'cluster': 1 } for file, content in files.items()}    
+    
     return render_template('database.html', data = data )
 
 @app.route('/database/<string:name>', methods=['GET'])
