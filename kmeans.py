@@ -40,12 +40,12 @@ def save_model(max_epochs = 50):
         model.min_alpha = model.alpha
     
     #save pickle file
-    with open('model.pkl', 'wb') as f:
+    with open('./static/model.pkl', 'wb') as f:
         pickle.dump(model, f)
 
 def load_model(clusters=7):
     #load pickle file
-    with open('model.pkl', 'rb') as f:
+    with open('./static/model.pkl', 'rb') as f:
         trained_model = pickle.load(f)
 
     return
