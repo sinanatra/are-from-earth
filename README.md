@@ -1,6 +1,8 @@
 # Men are from Earth, Women are from Earth, and Ai are from Earth too.
 
-[![Watch the video](https://giacomonanni.info/media/pages/archive/64a7b6eef5-1597062409/00are.png)](https://vimeo.com/412366901)
+[![Watch the video](https://github.com/sinanatra/are-from-earth/assets/20107875/1dd6350f-bb0f-4e29-800a-a9cdb75b2480)](https://vimeo.com/412366901)
+[Watch the video](https://vimeo.com/412366901)
+
 
 The disproportionate often irresponsive use of Machine learning Algorithms risks to emphasise stereotypes already present in data. Whenever data reflects biases of the broader society, the learning algorithm captures and learns from these stereotypes.
 
